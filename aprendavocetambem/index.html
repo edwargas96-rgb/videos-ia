@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seu Estúdio de Vídeos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0e2547;--navy-2:#13315f;--yellow:#FFC72C;--ink:#14161b;--cream:#fbf7ee;--paper:#fff;--muted:#5b6474;--muted-light:#b7c3d8;--line:#e7e1d3;--green:#1fae5b;--red:#e2483d;--radius:18px;--shadow:0 18px 40px -18px rgba(9,22,45,.45)}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;padding-bottom:72px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+section{padding:64px 0}
+.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(2rem,6vw,3.6rem);font-weight:900;line-height:1.05}
+h2{font-size:clamp(1.5rem,4vw,2.4rem);font-weight:800;margin:8px 0 12px}
+h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+p{color:var(--muted)}
+.btn{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:800;padding:14px 26px;border-radius:999px;box-shadow:var(--shadow)}
+header{background:var(--navy);color:#fff}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+header .btn{padding:8px 18px}
+.dark{background:var(--navy);color:#fff}.dark p{color:var(--muted-light)}
+.hero{text-align:center}
+.hero p{max-width:620px;margin:16px auto 24px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:32px 0}
+.stats b{display:block;font-size:1.8rem;color:var(--yellow)}
+.price s{opacity:.6}.price b{font-size:1.4rem;color:var(--yellow)}
+.small{font-size:.85rem;margin-top:12px}
+.marquee{overflow:hidden;white-space:nowrap;background:var(--yellow);color:var(--ink);font-weight:700;padding:10px 0}
+.marquee span{display:inline-block;padding-right:40px;animation:m 25s linear infinite}
+@keyframes m{to{transform:translateX(-50%)}}
+.grid{display:grid;gap:16px;margin-top:28px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card ul{padding-left:18px;margin:10px 0;color:var(--muted)}
+.tag{display:inline-block;background:var(--yellow);font-weight:700;font-size:.75rem;padding:2px 10px;border-radius:99px;margin-bottom:8px}
+.videos{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:28px}
+.video{aspect-ratio:9/16;background:var(--navy-2);border-radius:var(--radius);display:flex;align-items:flex-end;padding:12px;font-size:.85rem;color:#fff}
+.steps .card{display:flex;gap:14px}
+.num{flex:none;width:36px;height:36px;border-radius:50%;background:var(--yellow);font-weight:800;display:grid;place-items:center}
+.yes li::marker{color:var(--green)}.no li::marker{color:var(--red)}
+.offer{max-width:520px;margin:0 auto;text-align:center}
+.offer ul{text-align:left;list-style:none;padding:0;margin:18px 0}
+.offer li{padding:6px 0;color:var(--ink)}.offer li:before{content:"✓ ";color:var(--green);font-weight:800}
+details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-top:10px}
+summary{font-weight:700;cursor:pointer}details p{margin-top:8px}
+.center{text-align:center}
+footer{padding:28px 0;text-align:center;font-size:.85rem;color:var(--muted)}
+footer a{margin:0 8px;text-decoration:underline}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--navy);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;z-index:9}
+.sticky .btn{padding:8px 20px;box-shadow:none}
+</style>
+</head>
+<body>
+
+<!-- 1. Header -->
+<header><div class="wrap"><a href="#" style="font-weight:800">Seu Estúdio</a><a class="btn" href="#oferta">Quero o produto</a></div></header>
+
+<!-- 2. Hero -->
+<section class="dark hero"><div class="wrap">
+  <span class="eyebrow" style="color:var(--yellow)">Ebook em PDF · XX páginas</span>
+  <h1>Título principal com a promessa do produto.</h1>
+  <p>Subtítulo explicando o que a pessoa aprende, para quem é e o que ela NÃO precisa ter ou saber.</p>
+  <div class="stats">
+    <div><b>+000 mil</b>prova social 1</div>
+    <div><b>+00 mil</b>prova social 2</div>
+    <div><b>0</b>objeção removida</div>
+  </div>
+  <p class="price"><s>de R$ 00,00</s> por <b>R$ 00,00</b></p>
+  <a class="btn" href="#oferta">Quero o produto</a>
+  <p class="small">7 dias de garantia · acesso na hora · Pix ou cartão</p>
+</div></section>
+
+<!-- 3. Faixa de destaques -->
+<div class="marquee"><span>Destaque 1 · Destaque 2 · Destaque 3 · Destaque 4 · Destaque 5 · Destaque 1 · Destaque 2 · Destaque 3 · Destaque 4 · Destaque 5 ·</span></div>
+
+<!-- 4. O que você vai criar -->
+<section><div class="wrap">
+  <span class="eyebrow">O que você vai criar</span>
+  <h2>Resultado principal em uma frase.</h2>
+  <p>Por que esse formato faz o público voltar.</p>
+  <div class="grid">
+    <div class="card"><span class="tag">Módulo 1</span><h3>Primeiro formato</h3><p>Descrição curta.</p><ul><li>Entrega 1</li><li>Entrega 2</li><li>Entrega 3</li></ul><p><b>Ideal para:</b> objetivo A</p></div>
+    <div class="card"><span class="tag">Módulo 2</span><h3>Segundo formato</h3><p>Descrição curta.</p><ul><li>Entrega 1</li><li>Entrega 2</li><li>Entrega 3</li></ul><p><b>Ideal para:</b> objetivo B</p></div>
+  </div>
+</div></section>
+
+<!-- 5. O problema -->
+<section class="dark"><div class="wrap">
+  <span class="eyebrow" style="color:var(--yellow)">O problema</span>
+  <h2>Assistir é fácil. Fazer é outra história.</h2>
+  <p>Se você já tentou, provavelmente travou em um destes pontos:</p>
+  <div class="grid">
+    <div class="card"><h3>Dor 1</h3><p>Descrição da dor.</p></div>
+    <div class="card"><h3>Dor 2</h3><p>Descrição da dor.</p></div>
+    <div class="card"><h3>Dor 3</h3><p>Descrição da dor.</p></div>
+    <div class="card"><h3>Dor 4</h3><p>Descrição da dor.</p></div>
+    <div class="card"><h3>Dor 5</h3><p>Descrição da dor.</p></div>
+    <div class="card"><h3>Dor 6</h3><p>Descrição da dor.</p></div>
+  </div>
+  <p class="center" style="margin-top:24px">Frase de virada: o método resolve todas essas dores.</p>
+</div></section>
+
+<!-- 6. Vídeos / prova -->
+<section><div class="wrap">
+  <span class="eyebrow">Exemplos</span>
+  <h2>Todos feitos com o método.</h2>
+  <p>Troque cada bloco por um vídeo ou imagem seu.</p>
+  <div class="videos">
+    <div class="video">Vídeo 1</div><div class="video">Vídeo 2</div><div class="video">Vídeo 3</div>
+    <div class="video">Vídeo 4</div><div class="video">Vídeo 5</div><div class="video">Vídeo 6</div>
+  </div>
+</div></section>
+
+<!-- 7. O segredo / fórmula -->
+<section class="dark"><div class="wrap">
+  <span class="eyebrow" style="color:var(--yellow)">O segredo</span>
+  <h2>Por que ninguém consegue parar de assistir.</h2>
+  <p>Explique a fórmula que se repete em todo vídeo.</p>
+  <div class="grid steps">
+    <div class="card"><span class="num">1</span><div><h3>Gancho</h3><p>Descrição.</p></div></div>
+    <div class="card"><span class="num">2</span><div><h3>Desenvolvimento</h3><p>Descrição.</p></div></div>
+    <div class="card"><span class="num">3</span><div><h3>Virada</h3><p>Descrição.</p></div></div>
+    <div class="card"><span class="num">4</span><div><h3>Recompensa</h3><p>Descrição.</p></div></div>
+    <div class="card"><span class="num">↺</span><div><h3>Chamada para ação</h3><p>Descrição.</p></div></div>
+  </div>
+</div></section>
+
+<!-- 8. O que tem dentro -->
+<section><div class="wrap">
+  <span class="eyebrow">O que tem dentro</span>
+  <h2>XX páginas, do zero ao resultado.</h2>
+  <div class="grid steps">
+    <div class="card"><span class="num">P1</span><div><h3>Capítulo 1</h3><p>Descrição.</p></div></div>
+    <div class="card"><span class="num">P2</span><div><h3>Capítulo 2</h3><p>Descrição.</p></div></div>
+    <div class="card"><span class="num">P3</span><div><h3>Capítulo 3</h3><p>Descrição.</p></div></div>
+    <div class="card"><span class="num">P4</span><div><h3>Capítulo 4</h3><p>Descrição.</p></div></div>
+    <div class="card"><span class="num">P5</span><div><h3>Capítulo 5</h3><p>Descrição.</p></div></div>
+    <div class="card"><span class="num">+</span><div><h3>Bônus</h3><p>Material pronto.</p></div></div>
+  </div>
+</div></section>
+
+<!-- 9. Para quem é / não é -->
+<section><div class="wrap">
+  <span class="eyebrow">Para quem é</span>
+  <h2>Feito pra quem quer fazer, não só estudar.</h2>
+  <div class="grid">
+    <div class="card yes"><h3>É pra você se…</h3><ul><li>Perfil 1</li><li>Perfil 2</li><li>Perfil 3</li></ul></div>
+    <div class="card no"><h3>Não é pra você se…</h3><ul><li>Contra-perfil 1</li><li>Contra-perfil 2</li></ul></div>
+  </div>
+</div></section>
+
+<!-- 10. Oferta -->
+<section id="oferta" class="dark"><div class="wrap offer">
+  <span class="eyebrow" style="color:var(--yellow)">Ebook · nome do produto</span>
+  <h2>O método completo num produto só</h2>
+  <ul><li>Item incluído 1</li><li>Item incluído 2</li><li>Item incluído 3</li><li>Item incluído 4</li><li>Bônus</li></ul>
+  <p class="price"><s>De R$ 00,00</s> <b>R$ 00,00</b></p>
+  <p class="small">Pagamento único no Pix ou parcelado no cartão</p>
+  <p style="margin:18px 0"><a class="btn" href="#">Quero agora</a></p>
+  <p class="small">Compra segura · Acesso imediato por e-mail</p>
+</div></section>
+
+<!-- 11. Garantia -->
+<section><div class="wrap center">
+  <span class="eyebrow">7 dias</span>
+  <h2>Garantia incondicional de 7 dias</h2>
+  <p style="max-width:560px;margin:0 auto">Explique como pedir o reembolso e que a pessoa recebe 100% do valor de volta.</p>
+</div></section>
+
+<!-- 12. FAQ -->
+<section><div class="wrap" style="max-width:720px">
+  <span class="eyebrow">Dúvidas</span>
+  <h2>Perguntas frequentes</h2>
+  <details><summary>Preciso saber X?</summary><p>Resposta.</p></details>
+  <details><summary>Preciso de computador potente?</summary><p>Resposta.</p></details>
+  <details><summary>Funciona para o meu nicho?</summary><p>Resposta.</p></details>
+  <details><summary>Vou precisar pagar alguma ferramenta?</summary><p>Resposta.</p></details>
+  <details><summary>Como recebo o produto?</summary><p>Resposta.</p></details>
+  <details><summary>Garante resultado?</summary><p>Resposta honesta, sem promessas.</p></details>
+  <details><summary>E se eu não gostar?</summary><p>Resposta sobre a garantia.</p></details>
+</div></section>
+
+<!-- 13. CTA final -->
+<section class="dark center"><div class="wrap">
+  <h2>Chamada final com benefício imediato.</h2>
+  <p style="margin-bottom:20px">Reforço do preço e da garantia.</p>
+  <a class="btn" href="#oferta">Quero por R$ 00,00</a>
+</div></section>
+
+<!-- 14. Footer -->
+<footer><div class="wrap">© 2026 Seu Estúdio. Todos os direitos reservados.<br><a href="#">Termos de uso</a><a href="#">Privacidade</a></div></footer>
+
+<!-- 15. Barra fixa de compra -->
+<div class="sticky"><span><b>R$ 00,00</b> · Acesso imediato · 7 dias de garantia</span><a class="btn" href="#oferta">Comprar</a></div>
+
+</body>
+</html>
