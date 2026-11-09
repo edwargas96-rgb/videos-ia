@@ -10,3 +10,4 @@
 | 3. Receita | `receita.md`: dois formatos (POV em diálogo × crise narrada), com números medidos | ~10 min | R$ 0 |
 | 3. Molde | `molde-episodio.md`: o mapa de um episódio em primeira pessoa, juntando a estrutura dos 6 vídeos | ~10 min | R$ 0 |
 | 4. Roteiro Ep01 | `ep01/roteiro-ep01.md`: a história do celular da Ana em 12 cenas, com tempo, câmera, tela, som e falas (aguardando aprovação) | ~15 min | R$ 0 |
+| 7. Cena Ep01 | `ep01/cena/`: cena 3D em primeira pessoa (quarto, porta, corredor, mãos, celular com todas as telas e glitches, Ana no estilo de desenho) e `ep01/som.py` com os efeitos; sem voz ainda | ~1 h | R$ 0 |
