@@ -10,3 +10,4 @@
 | 3. Receita | `receita.md`: dois formatos (POV em diálogo × crise narrada), com números medidos | ~10 min | R$ 0 |
 | 3. Molde | `molde-episodio.md`: o mapa de um episódio em primeira pessoa, juntando a estrutura dos 6 vídeos | ~10 min | R$ 0 |
 | 4. Roteiro Ep01 | `ep01/roteiro-ep01.md`: a história do celular da Ana no molde, segundo a segundo (aguardando aprovação) | ~10 min | R$ 0 |
+| Minissérie | `minisserie.md`: regras do mistério, personagens, 6 episódios com as enquetes e o canal | ~15 min | R$ 0 |
