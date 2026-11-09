@@ -6,4 +6,5 @@
 | 2. Quadros | Folhas de quadros a 2 por segundo dos 6 vídeos (ficam só no computador) | ~2 min | R$ 0 |
 | 2. Câmera | Cortes e movimentos medidos em todos os quadros (`camera/`) | ~3 min | R$ 0 |
 | 2. Som | Volume final dos 6: -14,1 a -14,3 LUFS | ~1 min | R$ 0 |
-| 1. Transcrever | Whisper large-v3-turbo no computador, palavra por palavra (`transcricoes/`), em andamento | — | R$ 0 |
+| 1. Transcrever | 6 transcrições palavra por palavra (`transcricoes/`); ~6 min no computador da sessão | ~6 min | R$ 0 |
+| 3. Receita | `receita.md`: dois formatos (POV em diálogo × crise narrada), com números medidos | ~10 min | R$ 0 |
