@@ -104,7 +104,7 @@ dz = 0.3
 put(num("desliza") - 0.15, lp_fast(ruido(dz), 3000) * env(int(dz * SR), 0.1, 0.15), 0.15)
 
 # ---------- toques ----------
-toques = lista("zeros") + lista("codigo") + [num("appFone"), num("contato"), num("ligar"), num("galeria"), num("play")]
+toques = lista("zeros") + lista("codigo") + [num("appFone"), num("galeria"), num("play")]
 for t in toques:
     put(t, clique(2600, 0.025), 0.35)
 
@@ -155,8 +155,8 @@ put(g2a, glitch(1.2, 0.6), 1)
 t = g2a + 1.2
 while t < num("somem"):
     put(t, glitch(0.15, 0.2), 1); t += 0.3
-for k in range(11):                      # cada app sumindo: um estalo
-    put(num("somem") + k * 0.28, clique(1200 + 150 * k, 0.03), 0.35)
+for k in range(8):                       # cada app virando Gallery: um estalo
+    put(num("somem") + k * 0.3, clique(1200 + 150 * k, 0.03), 0.35)
 put(g2b - 0.5, tom(220, 0.6) * env(int(0.6 * SR), 0.2, 0.3), 0.08)
 
 # ---------- o vídeo da Ana ----------

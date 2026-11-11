@@ -35,15 +35,15 @@ export const E = {
   desliza: 11.6,                   // tela de senha
   zeros: [15.0, 15.5, 16.0, 16.5],
   g1: [17.2, 27.0],                // primeiro glitch
-  letras: 20.2,                    // o teclado vira letras
+  letras: 20.2,                    // o celular é hackeado: HELP ME no teclado
   help: [21.2, 21.9, 22.6, 23.3, 24.0, 24.7], // H E L P M E
   estouro: [25.8, 27.0],
   uns: 27.0,                       // todas as teclas viram 1
   codigo: [29.6, 31.6, 33.6, 35.6],// 1 8 0 7
   destrava: 35.8, inicio: 38.4,    // tela inicial
-  appFone: 43.4, contato: 44.4, ligar: 45.2,
-  g2: [45.6, 51.2],                // segundo glitch: os apps somem
-  somem: 47.6,
+  appFone: 43.4,
+  g2: [43.6, 51.2],                // segundo glitch: os apps viram Gallery
+  somem: 46.0,
   galeria: 52.4, play: 54.0,
   video: [54.3, 81.8],             // o vídeo da Ana
   olho: [59.4, 63.6],              // a câmera entra no olho dela

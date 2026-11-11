@@ -329,9 +329,8 @@ export function criarCena(canvas, raiz) {
   // ---------------- o dedão: onde ele toca em cada momento ----------------
   const TOQUES = [
     ...E.zeros.map((t) => [t, TECLA.zero]),
-    ...E.help.map((t, i) => [t, teclaLetra("HELPME"[i])]),
     ...E.codigo.map((t) => [t, TECLA.um]),
-    [E.appFone, TECLA.fone], [E.contato, TECLA.mae], [E.ligar, TECLA.ligar],
+    [E.appFone, TECLA.fone],
     [E.galeria, TECLA.galeria], [E.play, TECLA.video1],
   ];
   const REPOUSO = { u: 470, v: 1000 };

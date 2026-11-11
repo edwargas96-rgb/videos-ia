@@ -12,53 +12,30 @@ const FONTE = '"Helvetica Neue", Arial, sans-serif';
 export const TECLA = {
   num: (i) => ({ u: 130 + (i % 3) * 130, v: 560 + Math.floor(i / 3) * 120 }), // i: 0..11 (1..9, vazio, 0, apagar)
   zero: { u: 260, v: 920 },
-  um: { u: 130, v: 560 },
-  fone: { u: 75, v: 300 },
-  mae: { u: 260, v: 262 },
-  ligar: { u: 260, v: 760 },
-  galeria: { u: 260, v: 560 },
+  um: { u: 260, v: 680 },
+  fone: { u: 66, v: 900 },
+  galeria: { u: 324, v: 900 },
   video1: { u: 92, v: 330 },
 };
-const QWERTY = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"];
-export function teclaLetra(ch) {
-  for (let r = 0; r < 3; r++) {
-    const i = QWERTY[r].indexOf(ch);
-    if (i >= 0) {
-      const n = QWERTY[r].length, w = 49, x0 = SW / 2 - (n * w) / 2 + w / 2;
-      return { u: x0 + i * w, v: 600 + r * 100 };
-    }
-  }
-  return { u: SW / 2, v: 900 };
-}
-const HELP = "HELPME";
+export function teclaLetra() { return { u: SW / 2, v: 700 }; }
 
-const APPS = [
-  ["Telefone", "#2fbf5b", "📞"], ["Mensagens", "#3aa0ff", "💬"], ["Câmera", "#5b5f6b", "📷"], ["Galeria", "#f4a52a", "🖼️"],
-  ["Relógio", "#20232b", "⏰"], ["Agenda", "#e8473b", "📅"], ["Mapas", "#4cb37a", "🗺️"], ["Música", "#e2457a", "🎵"],
-  ["Notas", "#f2cf3a", "📝"], ["Ajustes", "#7d8391", "⚙️"], ["Clima", "#4a8de0", "⛅"], ["Contatos", "#9a7bd0", "👤"],
-];
-const posApp = (i) => ({ u: 75 + (i % 4) * 123.3, v: 300 + Math.floor(i / 4) * 150 });
-// a ordem em que os apps somem no segundo glitch (a Galeria, índice 3, fica)
-const ORDEM_SOME = [9, 0, 6, 11, 1, 8, 4, 10, 2, 7, 5];
+// os apps da tela inicial (como o celular de referência): nome e notificações
+const APPS = [["Spark", 16], ["Jabbr", 71], ["Vloggr", 3], ["Surfer", 0], ["Phone", 9], ["Chats", 43], ["Gallery", 0], ["Mail", 2]];
+const posApp = (i) => ({ u: 66 + (i % 4) * 129, v: 760 + Math.floor(i / 4) * 140 });
+// a ordem em que os apps viram Gallery no segundo glitch
+const ORDEM_VIRA = [3, 6, 0, 5, 2, 7, 4, 1];
 
-// relógio: 07:12, e nos glitches ele dispara
+// relógio: terça, 11 de agosto, 07:12. No glitch 1 voa até 15:15; no glitch 2 passa da meia-noite e vai a quarta, 12, 23:39
 function relogio(t) {
-  let min = 7 * 60 + 12, dia = 12, mes = 7;
-  const corre = (a, b) => {
-    const u = clamp((t - a) / (b - a));
-    return Math.floor((Math.exp(u * 7.5) - 1) * 40);
-  };
-  if (t >= E.g1[0] && t < E.uns) min += corre(E.g1[0], E.uns);
-  else if (t >= E.uns && t < E.g2[0]) min += 1;
-  else if (t >= E.g2[0] && t < E.g2[1]) min += 1 + corre(E.g2[0], E.g2[1]) * 0.6;
-  else if (t >= E.g2[1]) min += 2;
-  const total = Math.floor(min);
-  dia = 12 + Math.floor(total / 1440);
-  const h = Math.floor(total / 60) % 24, m = total % 60;
-  const d = ((dia - 1) % 30) + 1, mm = mes + Math.floor((dia - 1) / 30);
+  const u = (a, b) => Math.pow(clamp((t - a) / (b - a)), 1.8);
+  let m = 7 * 60 + 12;
+  if (t >= E.g2[0]) m = 915 + 1944 * u(E.g2[0], E.g2[1]);
+  else if (t >= E.uns) m = 915;
+  else if (t >= E.g1[0]) m = 432 + 483 * u(E.g1[0], E.uns);
+  const total = Math.floor(m), dia = 11 + Math.floor(total / 1440), md = total % 1440;
   const p2 = (x) => String(x).padStart(2, "0");
-  const SEM = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
-  return { hora: `${p2(h)}:${p2(m)}`, data: `${SEM[(dia + 1) % 7]}, ${d} de ${["", "", "", "", "", "", "", "julho", "agosto", "setembro", "outubro"][((mm - 1) % 12) + 1] || "julho"}`, curta: `${p2(d)}/${p2(((mm - 1) % 12) + 1)}` };
+  const SEM = { 11: "terça", 12: "quarta", 13: "quinta" };
+  return { hora: `${p2(Math.floor(md / 60))}:${p2(md % 60)}`, data: `${SEM[dia] || "quarta"}, ${dia} de agosto` };
 }
 
 export function criarTela(foto) {
@@ -77,7 +54,7 @@ export function criarTela(foto) {
     x.fillStyle = `rgba(5,8,18,${escuro})`; x.fillRect(0, 0, SW, SH);
     return k;
   };
-  const fBloq = fundo(9, 0.25), fSenha = fundo(26, 0.55), fInicio = fundo(22, 0.45);
+  const fBloq = fundo(9, 0.25), fSenha = fundo(26, 0.55), fInicio = fundo(0, 0.0);
   const thumbs = [0, 1, 2, 3, 4, 5].map((i) => {
     const k = document.createElement("canvas"); k.width = 150; k.height = 210;
     const x = k.getContext("2d");
@@ -116,6 +93,7 @@ export function criarTela(foto) {
 
   // a tela de senha. modo: "num" | "letras" | "uns"
   function senha(t, modo) {
+    if (modo !== "num") { hack(t, modo); return; }
     c.drawImage(fSenha, 0, 0);
     const r = relogio(t);
     barra(t, r.hora);
@@ -179,65 +157,150 @@ export function criarTela(foto) {
     }
   }
 
-  function inicio(t, somePor = null) {
-    c.drawImage(fInicio, 0, 0);
-    const r = relogio(t);
-    barra(t, r.hora);
-    APPS.forEach(([nome, cor, emo], i) => {
-      let p = posApp(i), s = 1;
-      if (somePor) {
-        const k = ORDEM_SOME.indexOf(i);
-        if (k >= 0) {
-          const t0 = E.somem + k * 0.28;
-          s = 1 - ramp(t, t0, t0 + 0.18);
-          if (s <= 0.001) return;
-        } else {            // a Galeria vai para o meio
-          const u = ramp(t, E.g2[1] - 0.6, E.g2[1]);
-          p = { u: lerp(p.u, TECLA.galeria.u, u), v: lerp(p.v, TECLA.galeria.v, u) };
-          s = 1 + 0.35 * u;
-        }
+  // ---- o visual hackeado: listras coloridas, grade branca, letras com as cores separadas ----
+  function fundoHack(t, forca = 1) {
+    const q = Math.floor(t * 12);
+    const CORES = ["170,20,30", "30,40,170", "20,120,60", "120,30,150", "0,0,0", "0,0,0"];
+    for (let y = 0; y < SH;) {
+      const h = 2 + Math.floor(hash(q * 3.1 + y * 0.7) * 9);
+      c.fillStyle = `rgba(${CORES[Math.floor(hash(y * 1.3 + q) * 6)]},${(0.3 + 0.55 * hash(y + q * 7.7)) * forca})`;
+      c.fillRect(0, y, SW, h); y += h;
+    }
+  }
+  function grade(t) {
+    const q = Math.floor(t * 12);
+    c.fillStyle = "rgba(255,255,255,0.85)";
+    for (const x of [195, 325]) {
+      for (let y = 500; y < 1000; y += 20) {
+        const dx = hash(q + y * 0.3 + x) < 0.15 ? (hash(q + y) - 0.5) * 8 : 0;
+        c.fillRect(x + dx, y, 2.5, 20);
+        if (hash(q * 1.7 + y + x) < 0.12) { c.fillStyle = hash(y) < 0.5 ? "rgba(80,160,255,0.9)" : "rgba(255,160,40,0.9)"; c.fillRect(x - 6, y, 4, 14); c.fillStyle = "rgba(255,255,255,0.85)"; }
       }
-      c.save(); c.translate(p.u, p.v); c.scale(s, s);
-      ret(-42, -42, 84, 84, 22, cor);
-      txt(emo, 0, 2, 42);
-      txt(nome, 0, 64, 18, "#fff", 500);
-      c.restore();
-    });
-    if (!somePor) {
-      ret(26, 900, SW - 52, 120, 34, "rgba(255,255,255,0.18)");
-      [["📞", "#2fbf5b"], ["💬", "#3aa0ff"], ["🌐", "#4a8de0"], ["📷", "#5b5f6b"]].forEach(([e, cor], i) => {
-        ret(58 + i * 112, 918, 84, 84, 22, cor); txt(e, 100 + i * 112, 962, 40);
-      });
+    }
+    for (const y of [620, 740, 860]) c.fillRect(20, y, SW - 40, 2.5);
+  }
+  function letraHack(ch, u, v, tam, q) {
+    if (!ch) return;
+    const dx = hash(q * 5.1 + u + v) < 0.2 ? (hash(q + u) - 0.5) * 14 : 0;
+    c.font = `300 ${tam}px ${FONTE}`; c.textAlign = "center"; c.textBaseline = "middle";
+    c.fillStyle = "rgba(255,40,40,0.85)"; c.fillText(ch, u + dx - 4, v);
+    c.fillStyle = "rgba(40,120,255,0.85)"; c.fillText(ch, u + dx + 4, v);
+    c.fillStyle = "#fff"; c.fillText(ch, u + dx, v);
+  }
+  // o teclado numérico hackeado: HELP ME piscando (modo "letras") ou todas as teclas iguais (modo "uns")
+  const VARIANTES = [
+    ["H", "E", "?", "L", "L", "", "M", "E", "P", "", "5", ""],
+    ["H", "E", "", "L", "", "", "?", "", "P", "", "5", ""],
+    ["H", "?", "", "", "", "", "M", "", "", "", "H", ""],
+  ];
+  function hack(t, modo) {
+    c.fillStyle = "#040206"; c.fillRect(0, 0, SW, SH);
+    fundoHack(t);
+    grade(t);
+    const q = Math.floor(t * 8);
+    const r = relogio(t);
+    if (modo === "letras") {
+      // o relógio voando no alto
+      letraHack(r.hora, SW / 2, 170, 86, q);
+      c.font = `500 24px ${FONTE}`; c.fillStyle = "#fff"; c.textAlign = "center"; c.fillText(r.data, SW / 2, 240);
+      const h = hash(q * 2.3);
+      const V = h < 0.6 ? VARIANTES[0] : h < 0.82 ? VARIANTES[1] : VARIANTES[2];
+      for (let i = 0; i < 12; i++) {
+        let ch = V[i];
+        if (ch && hash(q * 13.1 + i) < 0.1) ch = "?";
+        const p = TECLA.num(i);
+        letraHack(ch, p.u, p.v, 74, q);
+      }
+      return;
+    }
+    // modo "uns": a senha. Cada toque troca TODAS as teclas: 1 -> 8 -> 0 -> 7
+    const k = E.codigo.filter((z) => t >= z + 0.12).length;
+    const rot = ["1", "8", "0", "7", "7"][k];
+    const troca = E.codigo.some((z) => t >= z + 0.08 && t < z + 0.3);
+    txt("Dica: aniversário do Tobi", SW / 2, 410, 23, "rgba(255,255,255,0.85)", 500);
+    const digitos = ["1", "8", "0", "7"].slice(0, E.codigo.filter((z) => t >= z + 0.05).length);
+    const verde = t >= E.destrava;
+    for (let i = 0; i < 4; i++) {
+      const x = SW / 2 - 105 + i * 70, y = 318;
+      if (digitos[i]) letraHack(digitos[i], x, y, 48, verde ? 0 : q);
+      else { c.beginPath(); c.arc(x, y, 11, 0, 7); c.strokeStyle = "#fff"; c.lineWidth = 2.5; c.stroke(); }
+    }
+    if (verde) { c.fillStyle = "rgba(60,224,122,0.35)"; c.fillRect(SW / 2 - 140, 285, 280, 66); }
+    for (let i = 0; i < 12; i++) {
+      if (i === 9 || i === 11) continue;
+      const p = TECLA.num(i);
+      const apertou = E.codigo.some((z) => t >= z && t < z + 0.18) && p.u === TECLA.um.u && p.v === TECLA.um.v;
+      if (apertou) { c.fillStyle = "rgba(255,255,255,0.35)"; c.fillRect(p.u - 64, p.v - 58, 128, 116); }
+      letraHack(rot, p.u + (troca ? (hash(q + i) - 0.5) * 30 : 0), p.v, 74, troca ? q + i : q);
     }
   }
 
-  function contatos(t) {
-    c.fillStyle = "#0f1116"; c.fillRect(0, 0, SW, SH);
-    barra(t, relogio(t).hora);
-    txt("Favoritos", 40, 130, 40, "#fff", 800, "left");
-    const nomes = [["Mãe", "❤️"], ["Lari", ""], ["Pai", ""], ["Vó Cida", ""], ["Escola", ""]];
-    nomes.forEach(([n, e], i) => {
-      const y = 262 + i * 110;
-      const toque = i === 0 && t >= E.contato && t < E.contato + 0.25;
-      if (toque) { c.fillStyle = "rgba(255,255,255,0.12)"; c.fillRect(0, y - 52, SW, 104); }
-      c.beginPath(); c.arc(80, y, 34, 0, 7); c.fillStyle = ["#e2457a", "#3aa0ff", "#4cb37a", "#f4a52a", "#7d8391"][i]; c.fill();
-      txt(n[0], 80, y, 30, "#fff", 700);
-      txt(`${n} ${e}`, 136, y, 30, "#fff", 500, "left");
-      c.fillStyle = "rgba(255,255,255,0.12)"; c.fillRect(136, y + 52, SW - 136, 2);
-    });
+  // ---- a tela inicial (como o celular de referência) ----
+  function icone(nome, u, v, s = 1) {
+    c.save(); c.translate(u, v); c.scale(s, s);
+    const L = 96, x0 = -L / 2, y0 = -L / 2;
+    const caixa = (cor) => ret(x0, y0, L, L, 22, cor);
+    if (nome === "Spark") {
+      caixa("#e8456b");
+      c.fillStyle = "#fff"; c.beginPath(); c.moveTo(0, 26);
+      c.bezierCurveTo(-46, -6, -26, -40, 0, -16); c.bezierCurveTo(26, -40, 46, -6, 0, 26); c.fill();
+    } else if (nome === "Jabbr") {
+      caixa("#3fa9f5"); txt("❞", 0, 8, 72, "#fff", 900);
+    } else if (nome === "Vloggr") {
+      const g = c.createLinearGradient(x0, y0, -x0, -y0); g.addColorStop(0, "#5a1fe0"); g.addColorStop(1, "#b44cff");
+      ret(x0, y0, L, L, 22, g); txt("V", 2, 4, 66, "#fff", 900);
+    } else if (nome === "Surfer") {
+      caixa("#16203e");
+      c.lineWidth = 9; c.strokeStyle = "#2f8bf0"; c.beginPath(); c.arc(0, 0, 26, 0.4, 5.6); c.stroke();
+      c.strokeStyle = "#5fd0ff"; c.beginPath(); c.arc(4, 4, 13, 3.6, 8.6); c.stroke();
+    } else if (nome === "Phone") {
+      caixa("#2fc44f"); txt("📞", 0, 4, 50);
+    } else if (nome === "Chats") {
+      caixa("#f28a2e");
+      ret(-30, -26, 60, 44, 20, "#fff"); c.beginPath(); c.moveTo(-14, 14); c.lineTo(-24, 32); c.lineTo(4, 16); c.fill();
+    } else if (nome === "Gallery") {
+      caixa("#f7f7f9");
+      const cores = ["#f44336", "#ff9800", "#ffeb3b", "#4caf50", "#00bcd4", "#2196f3", "#9c27b0", "#e91e63"];
+      cores.forEach((cor, i) => {
+        c.save(); c.rotate((i / 8) * Math.PI * 2); c.fillStyle = cor; c.globalAlpha = 0.85;
+        c.beginPath(); c.ellipse(0, -16, 10, 17, 0, 0, 7); c.fill(); c.restore();
+      });
+    } else if (nome === "Mail") {
+      caixa("#2a8ee8");
+      ret(-30, -20, 60, 42, 6, "#fff"); c.strokeStyle = "#2a8ee8"; c.lineWidth = 4;
+      c.beginPath(); c.moveTo(-28, -18); c.lineTo(0, 6); c.lineTo(28, -18); c.stroke();
+    }
+    c.restore();
   }
-
-  function perfilMae(t) {
-    c.fillStyle = "#0f1116"; c.fillRect(0, 0, SW, SH);
-    barra(t, relogio(t).hora);
-    c.beginPath(); c.arc(SW / 2, 330, 110, 0, 7); c.fillStyle = "#e2457a"; c.fill();
-    txt("M", SW / 2, 330, 110, "#fff", 700);
-    txt("Mãe ❤️", SW / 2, 500, 44, "#fff", 700);
-    txt("celular · 14 chamadas", SW / 2, 556, 22, "rgba(255,255,255,0.6)");
-    const toque = t >= E.ligar && t < E.ligar + 0.2;
-    c.beginPath(); c.arc(TECLA.ligar.u, TECLA.ligar.v, toque ? 66 : 60, 0, 7); c.fillStyle = "#2fbf5b"; c.fill();
-    txt("📞", TECLA.ligar.u, TECLA.ligar.v + 2, 52);
-    txt("Ligar", TECLA.ligar.u, TECLA.ligar.v + 98, 24, "#fff", 600);
+  function selo(n, u, v) {
+    if (!n) return;
+    c.beginPath(); c.arc(u + 44, v - 44, 18, 0, 7); c.fillStyle = "#d7e64a"; c.fill();
+    txt(String(n), u + 44, v - 43, 19, "#1d1d1d", 800);
+  }
+  function inicio(t, viraGaleria = false) {
+    c.drawImage(fInicio, 0, 0);
+    if (viraGaleria) { c.globalAlpha = 0.9; fundoHack(t, 1); c.globalAlpha = 1; }
+    // faixas escuras no alto e embaixo
+    let g = c.createLinearGradient(0, 0, 0, 140); g.addColorStop(0, "rgba(0,0,0,0.55)"); g.addColorStop(1, "rgba(0,0,0,0)");
+    c.fillStyle = g; c.fillRect(0, 0, SW, 140);
+    g = c.createLinearGradient(0, 700, 0, SH); g.addColorStop(0, "rgba(0,0,0,0)"); g.addColorStop(1, "rgba(0,0,0,0.6)");
+    c.fillStyle = g; c.fillRect(0, 700, SW, SH - 700);
+    const r = relogio(t);
+    txt(r.hora, 26, 44, 40, "#fff", 500, "left");
+    txt(r.data, 26, 86, 21, "rgba(255,255,255,0.9)", 500, "left");
+    txt("●●●○○  ◠", SW - 80, 40, 16, "#fff", 600, "right");
+    ret(SW - 70, 31, 40, 18, 4, "#fff");
+    ret(SW - 12, 26, 8, 28, 2, "#e6e255");
+    APPS.forEach(([nome, n], i) => {
+      const p = posApp(i);
+      let vira = false;
+      if (viraGaleria) vira = t >= E.somem + ORDEM_VIRA.indexOf(i) * 0.3;
+      const nm = vira ? "Gallery" : nome;
+      const tremor = viraGaleria && hash(Math.floor(t * 10) + i) < 0.25 ? (hash(t + i) - 0.5) * 10 : 0;
+      icone(nm, p.u + tremor, p.v);
+      if (!vira) selo(n, p.u, p.v);
+      txt(nm, p.u + tremor, p.v + 66, 20, "#fff", 500);
+    });
   }
 
   function galeria(t) {
@@ -317,10 +380,7 @@ export function criarTela(foto) {
     else if (t < E.uns) senha(t, "letras");
     else if (t < E.destrava + 0.9) senha(t, "uns");
     else if (t < E.inicio) { senha(t, "uns"); c.fillStyle = `rgba(0,0,0,${ramp(t, E.destrava + 0.9, E.inicio)})`; c.fillRect(0, 0, SW, SH); }
-    else if (t < E.appFone + 0.25) inicio(t);
-    else if (t < E.contato + 0.3) contatos(t);
-    else if (t < E.g2[0]) perfilMae(t);
-    else if (t < E.somem) { if (t < E.g2[0] + 0.9) perfilMae(t); else inicio(t, true); }
+    else if (t < E.g2[0]) inicio(t);
     else if (t < E.galeria + 0.25) inicio(t, true);
     else if (t < E.play + 0.3) galeria(t);
     else if (t < E.estatica[0]) { video = true; }
