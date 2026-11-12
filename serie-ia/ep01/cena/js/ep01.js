@@ -5,6 +5,7 @@ import { clamp, lerp, ramp, easeIO, easeOut } from "./kit.js";
 import { peca, mat, caixa, bola, cilindro, capsula, entre, texturaCanvas } from "./estilo.js";
 import { criarTela, SW, SH, TECLA, teclaLetra } from "./tela.js";
 import { criarAna } from "./ana.js";
+import { criarProtagonista } from "./protagonista.js";
 import { FALAS, E, DURACAO } from "./roteiro.js";
 
 const W = 1080, H = 1920, RW = 720, RH = 1280;   // a cena é desenhada em 720x1280 e ampliada
@@ -85,19 +86,39 @@ export function criarCena(canvas, raiz) {
     const g = peca(caixa(0.02, 0.2, 0.95, 0.01), 0x9c6a42, { contorno: 0.004 });
     g.position.set(1.67, 0.17 + i * 0.25, -0.2); cena.add(g);
   }
-  const espelhoMold = peca(caixa(0.04, 0.95, 0.7, 0.02), 0xd8b24a, { contorno: 0.008 });
-  espelhoMold.position.set(2.17, 1.45, -0.2); cena.add(espelhoMold);
-  const espelho = new THREE.Mesh(new THREE.PlaneGeometry(0.6, 0.85), new THREE.MeshBasicMaterial({
-    map: texturaCanvas(256, 360, (x, w, h) => {
-      const g = x.createLinearGradient(0, 0, w, h); g.addColorStop(0, "#b9cad6"); g.addColorStop(1, "#7f94a5");
-      x.fillStyle = g; x.fillRect(0, 0, w, h);
-      x.fillStyle = "rgba(255,255,255,0.55)";
-      for (const [o, l] of [[30, 26], [80, 12], [150, 30]]) { x.beginPath(); x.moveTo(o, 0); x.lineTo(o + l, 0); x.lineTo(o + l - 120, h); x.lineTo(o - 120, h); x.fill(); }
-    }),
-  }));
-  espelho.position.set(2.145, 1.45, -0.2); espelho.rotation.y = -Math.PI / 2; cena.add(espelho);
+  const espelhoMold = peca(caixa(0.04, 1.18, 0.86, 0.02), 0xd8b24a, { contorno: 0.008 });
+  espelhoMold.position.set(2.17, 1.48, -0.2); cena.add(espelhoMold);
+  // o espelho: uma câmera refletida (atrás do vidro) filma o quarto pela "janela" do espelho
+  const EX = 2.145, EY = 1.48, EZ = -0.2, EW = 0.76, EH = 1.08;
+  const rtEsp = new THREE.WebGLRenderTarget(512, 728);
+  rtEsp.texture.colorSpace = THREE.SRGBColorSpace;
+  rtEsp.texture.wrapS = THREE.RepeatWrapping; rtEsp.texture.repeat.x = -1; rtEsp.texture.offset.x = 1;
+  const espelho = new THREE.Mesh(new THREE.PlaneGeometry(EW, EH), new THREE.MeshBasicMaterial({ map: rtEsp.texture, color: 0xdfe8ee, toneMapped: false }));
+  espelho.position.set(EX, EY, EZ); espelho.rotation.y = -Math.PI / 2; cena.add(espelho);
+  const camEsp = new THREE.PerspectiveCamera();
+  const voce = criarProtagonista(); voce.visible = false; cena.add(voce);
+  function renderEspelho(cam) {
+    const P = cam.position, d = 2 * EX - P.x - EX;          // distância do olho refletido até o vidro
+    camEsp.position.set(2 * EX - P.x, P.y, P.z);
+    camEsp.up.set(0, 1, 0); camEsp.lookAt(camEsp.position.x - 1, P.y, P.z);
+    const n = Math.max(0.02, d - 0.004), k = n / d;
+    // cantos do vidro no espaço da câmera refletida (direita = -Z do mundo)
+    const xl0 = -((EZ + EW / 2) - P.z), xl1 = -((EZ - EW / 2) - P.z);
+    const yb = EY - EH / 2 - P.y, yt = EY + EH / 2 - P.y;
+        // projeção fora do eixo (pela "janela" do espelho), montada com setViewOffset
+    const L = xl0 * k, Rr = xl1 * k, T = yt * k, B = yb * k;
+    const mx = Math.max(Math.abs(L), Math.abs(Rr)), my = Math.max(Math.abs(T), Math.abs(B));
+    camEsp.near = n; camEsp.far = 40;
+    camEsp.aspect = mx / my;
+    camEsp.fov = THREE.MathUtils.radToDeg(2 * Math.atan(my / n));
+    camEsp.setViewOffset(2 * mx, 2 * my, mx + L, my - T, Rr - L, T - B);
+    camEsp.updateMatrixWorld();
+    espelho.visible = false; espelhoMold.visible = false; voce.visible = true;
+    r.setRenderTarget(rtEsp); r.render(cena, camEsp); r.setRenderTarget(null);
+    espelho.visible = true; espelhoMold.visible = true; voce.visible = false;
+  }
   const chave = peca(caixa(0.06, 0.012, 0.025, 0.004), 0xc9c9c9, { contorno: 0.003 });
-  chave.position.set(1.85, 0.86, -0.05); cena.add(chave);
+  chave.position.set(1.76, 0.86, -0.12); cena.add(chave);
   const cama = peca(caixa(1.3, 0.45, 2.0, 0.08), 0x4f6fa8, { contorno: 0.01 });
   cama.position.set(-1.5, 0.225, -0.6); cena.add(cama);
   const trav = peca(caixa(0.6, 0.15, 0.4, 0.06), 0xf1ece3, { contorno: 0.008 });
@@ -232,17 +253,27 @@ export function criarCena(canvas, raiz) {
   // a mão que segura o celular (filha do celular): palma atrás, dedos na borda esquerda, dedão à direita
   const maoCel = new THREE.Group();
   {
-    const palma = peca(caixa(0.07, 0.085, 0.03, 0.014), PELE, { contorno: 0.0035 });
-    palma.position.set(0.012, -0.05, -0.022); maoCel.add(palma);
-    for (let i = 0; i < 3; i++) {
-      const d = peca(capsula(0.0068, 0.016), PELE, { contorno: 0.0022 });
-      d.position.set(-PW / 2 - 0.0015, -0.018 - i * 0.019, -0.001); d.rotation.z = 0.2;
-      maoCel.add(d);
+    const palma = peca(caixa(0.062, 0.074, 0.026, 0.012), PELE, { contorno: 0.0028 });
+    palma.position.set(0.006, -0.052, -0.019); maoCel.add(palma);
+    // quatro dedos dobrados na borda esquerda: a parte de trás e a ponta que aparece na frente
+    for (let i = 0; i < 4; i++) {
+      const y = -0.01 - i * 0.017;
+      const base = peca(capsula(0.0062, 0.011), PELE, { contorno: 0.002 });
+      base.position.set(-PW / 2 - 0.0035, y, -0.004); base.rotation.x = Math.PI / 2;
+      const ponta = peca(capsula(0.0056, 0.005), PELE, { contorno: 0.002 });
+      ponta.position.set(-PW / 2 + 0.0015, y - 0.001, PD / 2 + 0.0035); ponta.rotation.z = Math.PI / 2;
+      const unha = new THREE.Mesh(new THREE.CircleGeometry(0.0035, 12), new THREE.MeshBasicMaterial({ color: 0xd9a07e }));
+      unha.position.set(-PW / 2 + 0.006, y - 0.001, PD / 2 + 0.009);
+      maoCel.add(base, ponta, unha);
     }
-    const manga = peca(cilindro(0.05, 0.055, 0.32), JAQUETA, { contorno: 0.005 });
-    manga.position.set(0.07, -0.2, -0.06); manga.rotation.set(0.5, 0, 0.55); maoCel.add(manga);
-    const punho = peca(cilindro(0.051, 0.051, 0.035), 0x56612d, { contorno: 0.004 });
-    punho.position.set(0.035, -0.105, -0.035); punho.rotation.set(0.5, 0, 0.55); maoCel.add(punho);
+    const pulso = peca(cilindro(0.022, 0.025, 0.06), PELE, { contorno: 0.0028 });
+    pulso.position.set(0.02, -0.1, -0.03); pulso.rotation.set(0.35, 0, 0.42); maoCel.add(pulso);
+    const punho = peca(cilindro(0.033, 0.033, 0.03), 0x56612d, { contorno: 0.003 });
+    punho.position.set(0.036, -0.135, -0.042); punho.rotation.set(0.35, 0, 0.42); maoCel.add(punho);
+    const manga = peca(cilindro(0.035, 0.045, 0.34), JAQUETA, { contorno: 0.0035 });
+    manga.position.set(0.1, -0.29, -0.1); manga.rotation.set(0.35, 0, 0.42); maoCel.add(manga);
+    const costura = peca(cilindro(0.0355, 0.0355, 0.006), 0x4d5826, { contorno: 0 });
+    costura.position.set(0.05, -0.17, -0.055); costura.rotation.set(0.35, 0, 0.42); maoCel.add(costura);
   }
   const dedao = peca(capsula(0.0078, 1), PELE, { contorno: 0.0022 });
   maoCel.add(dedao);
@@ -252,8 +283,8 @@ export function criarCena(canvas, raiz) {
   const cam = new THREE.PerspectiveCamera(80, RW / RH, 0.02, 60);
   // pontos-chave da cabeça: [t, x, y, z, giro(graus), inclinação(graus)]
   const CH = [
-    [0.0, 1.3, 1.62, -0.2, -90, -34], [1.7, 1.3, 1.62, -0.2, -88, -28],
-    [E.vira[0], 1.3, 1.62, -0.2, -88, -24], [E.vira[1], 1.1, 1.62, -0.3, -8, -6],
+    [0.0, 1.2, 1.62, -0.25, -90, -16], [1.7, 1.2, 1.62, -0.25, -88, -13],
+    [E.vira[0], 1.2, 1.62, -0.25, -88, -12], [E.vira[1], 1.05, 1.62, -0.3, -8, -6],
     [E.anda[1], 0.32, 1.62, -2.05, -2, -4], [E.porta[1], 0.3, 1.62, -2.0, 0, -8],
     [E.olhaChao[1], 0.3, 1.62, -2.0, 0, -46], [E.abaixa[0], 0.3, 1.62, -2.05, 0, -46],
     [E.abaixa[1], 0.16, 0.98, -2.85, 0, -68], [E.pega + 0.05, 0.16, 0.95, -2.88, 0, -70],
@@ -377,9 +408,15 @@ export function criarCena(canvas, raiz) {
     corpo.visible = !(t > E.abaixa[0] + 0.3 && t < E.levanta[1] - 0.2);
     // o zíper sobe
     const zu = 1;
-    puxador.position.set(0, lerp(0.84, 1.38, zu), -0.08);
+    puxador.position.set(0, lerp(0.84, 1.38, zu), -0.08); puxador.visible = false;
     camiseta.visible = zu < 0.98;
     camiseta.scale.set(1, Math.max(0.01, 1 - zu), 1); camiseta.position.y = 1.4 - (0.6 * (1 - zu)) / 2;
+
+    // você no espelho: cabeça na câmera, girando com ela
+    voce.position.set(x, y, z);
+    voce.rotation.set(0, g, 0, "YXZ");
+    voce.children[0].rotation.x = ic * 0.5;
+    voce.userData.boca.scale.set(t >= E.buzz0 + 0.3 ? 0.6 : 1, 1, 1);
 
     // a porta abre
     porta.rotation.y = -THREE.MathUtils.degToRad(78) * ramp(t, E.porta[0] + 0.15, E.porta[1], easeOut);
@@ -396,7 +433,7 @@ export function criarCena(canvas, raiz) {
     if (pegandoChave) {
       // a mão vai até a chave em cima da cômoda, pega e traz
       const ida = ramp(t, 0.25, 0.95), volta = ramp(t, 1.15, 1.8);
-      const pChave = V(1.85, 0.9, -0.05);
+      const pChave = V(1.76, 0.9, -0.12);
       const perto = noMundoDaCam(V(0.16, -0.36, -0.32));
       const p = perto.clone().lerp(pChave.clone().add(V(-0.04, 0.03, 0.0)), ida).lerp(noMundoDaCam(V(0.24, -0.55, -0.25)), volta);
       maoD.position.copy(p);
@@ -404,7 +441,7 @@ export function criarCena(canvas, raiz) {
       maoD.visible = ida > 0.02 && volta < 0.97;
       chave.visible = !(t > 0.95 && volta > 0.97);
       if (t > 0.95) chave.position.copy(p).add(V(0, -0.02, 0));
-      else chave.position.set(1.85, 0.86, -0.05);
+      else chave.position.set(1.76, 0.86, -0.12);
     } else if (t < E.vira[1] + 0.2) {
       maoD.visible = false;
     } else if (t < E.abaixa[0]) {
@@ -424,10 +461,10 @@ export function criarCena(canvas, raiz) {
       // abaixa e pega o celular no capacho
       const ida = ramp(t, E.abaixa[0] + 0.4, E.pega);
       const pChao = V(0.12, 0.05, -3.48);
-      const p = noMundoDaCam(V(0.2, -0.45, -0.25)).lerp(pChao.clone().add(V(0.03, 0.04, 0.05)), ida);
+      const p = noMundoDaCam(V(0.15, -0.42, -0.3)).lerp(pChao.clone().add(V(0.03, 0.04, 0.05)), ida);
       maoD.position.copy(p);
-      maoD.quaternion.setFromEuler(new THREE.Euler(-1.2, 0.1, 0, "YXZ"));
-      maoD.visible = ida > 0.02;
+      maoD.quaternion.copy(cam.quaternion).multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(0.8, 0.1, -0.2)));
+      maoD.visible = ida > 0.02 && t < E.pega;
     }
 
     // o celular: no capacho, vibrando; depois sobe para a mão
@@ -440,7 +477,7 @@ export function criarCena(canvas, raiz) {
     const lp = CEL_MAO.pos.clone().add(V(0.002 * sn(t, 0.9, 3), 0.002 * sn(t, 0.8, 4), perto));
     const naMao = noMundoDaCam(lp);
     qc.copy(cam.quaternion).multiply(new THREE.Quaternion().setFromEuler(CEL_MAO.rot));
-    const sobe = ramp(t, E.pega, E.levanta[1] + 0.1);
+    const sobe = ramp(t, E.pega, E.levanta[1] - 0.25, easeOut);
     celular.position.copy(noChao).lerp(naMao, sobe);
     celular.quaternion.copy(qChao).slerp(qc, sobe);
     maoCel.visible = t >= E.pega;
@@ -466,7 +503,8 @@ export function criarCena(canvas, raiz) {
     // luz do corredor mais fria
     sol.intensity = 1.0;
 
-    // desenha
+    // desenha (o espelho só enquanto está à vista)
+    if (t < E.vira[1] + 0.3) renderEspelho(cam);
     r.setRenderTarget(rt); r.render(cena, cam); r.setRenderTarget(null);
     pos.uniforms.uT.value = t;
     pos.uniforms.uG.value = gl;
