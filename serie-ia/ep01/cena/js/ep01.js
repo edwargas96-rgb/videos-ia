@@ -8,7 +8,7 @@ import { criarAna } from "./ana.js";
 import { criarProtagonista } from "./protagonista.js";
 import { FALAS, E, DURACAO } from "./roteiro.js";
 
-const W = 1080, H = 1920, RW = 720, RH = 1280;   // a cena é desenhada em 720x1280 e ampliada
+const W = 1080, H = 1920, RW = 1080, RH = 1920;  // a cena é desenhada no tamanho final
 const hash = (n) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
 const sn = (t, f, s) => Math.sin(t * f + s) * 0.6 + Math.sin(t * f * 2.31 + s * 1.3) * 0.4;
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
@@ -46,9 +46,9 @@ export function criarCena(canvas, raiz) {
     const p = new THREE.Mesh(new THREE.PlaneGeometry(w, h), parede);
     p.position.y = h / 2; g.add(p);
     const f = new THREE.Mesh(new THREE.PlaneGeometry(w, 0.9), faixa);
-    f.position.set(0, 0.45, 0.002); g.add(f);
+    f.position.set(0, 0.45, 0.006); g.add(f);
     const rod = new THREE.Mesh(new THREE.PlaneGeometry(w, 0.05), mat(0x3f5f4e));
-    rod.position.set(0, 0.92, 0.003); g.add(rod);
+    rod.position.set(0, 0.92, 0.009); g.add(rod);
     g.position.set(x, y, z); g.rotation.y = ry;
     cena.add(g);
     return g;
@@ -152,7 +152,7 @@ export function criarCena(canvas, raiz) {
   const pf = new THREE.Mesh(new THREE.PlaneGeometry(10, 2.6), paredeCorr);
   pf.position.set(0, 1.3, -5.2); corredor.add(pf);
   const ff = new THREE.Mesh(new THREE.PlaneGeometry(10, 1.0), faixaCorr);
-  ff.position.set(0, 0.5, -5.19); corredor.add(ff);
+  ff.position.set(0, 0.5, -5.185); corredor.add(ff);
   const pfora = new THREE.Mesh(new THREE.PlaneGeometry(10, 2.6), paredeCorr);
   pfora.position.set(0, 1.3, -3.05); pfora.rotation.y = Math.PI; corredor.add(pfora);
   const tetoC = new THREE.Mesh(new THREE.PlaneGeometry(10, 2.2), mat(0xe9e6df));
@@ -218,7 +218,7 @@ export function criarCena(canvas, raiz) {
   // ---------------- o celular ----------------
   const fotoCanvas = document.createElement("canvas"); fotoCanvas.width = SW; fotoCanvas.height = SH;
   const ana = criarAna();
-  const rtAna = new THREE.WebGLRenderTarget(SW, SH, { samples: 2 });
+  const rtAna = new THREE.WebGLRenderTarget(SW, SH, { samples: 4 });
   rtAna.texture.colorSpace = THREE.SRGBColorSpace;
   {   // a foto da Ana para a tela de bloqueio: renderiza uma vez e lê os pixels
     const rtF = new THREE.WebGLRenderTarget(SW, SH);
@@ -306,7 +306,7 @@ export function criarCena(canvas, raiz) {
   }
 
   // ---------------- a passagem final (olho de peixe, glitch, chuvisco) ----------------
-  const rt = new THREE.WebGLRenderTarget(RW, RH, { samples: 2, type: THREE.HalfFloatType });
+  const rt = new THREE.WebGLRenderTarget(RW, RH, { samples: 4, type: THREE.HalfFloatType });
   const pos = new THREE.ShaderMaterial({
     uniforms: { tCena: { value: rt.texture }, uT: { value: 0 }, uG: { value: 0 }, uPeixe: { value: 0.32 }, uFade: { value: 0 }, uEsc: { value: 0 } },
     vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }",
@@ -324,7 +324,7 @@ export function criarCena(canvas, raiz) {
         if (h(vec2(fx, q)) < uG * 0.45) uv.x += (h(vec2(q, fx)) - 0.5) * 0.12 * uG;
         float sep = 0.006 * uG;
         vec3 col = vec3(texture2D(tCena, uv + vec2(sep, 0.0)).r, texture2D(tCena, uv).g, texture2D(tCena, uv - vec2(sep, 0.0)).b);
-        col += (h(vUv * 1000.0 + q) - 0.5) * (0.035 + 0.12 * uG);
+        col += (h(vUv * 1000.0 + q) - 0.5) * (0.008 + 0.12 * uG);
         col *= 1.0 - 0.45 * smoothstep(0.12, 0.42, length(c * vec2(1.0, 0.8)));
         col = mix(col, vec3(0.0), uEsc);
         col = mix(col, vec3(0.0), uFade);
@@ -343,7 +343,7 @@ export function criarCena(canvas, raiz) {
     .camada{position:absolute;inset:0;pointer-events:none;font-family:"Arial Black",Arial,sans-serif}
     .parte{position:absolute;top:150px;left:50%;transform:translateX(-50%);background:#c8231f;color:#fff;font-weight:900;font-size:44px;padding:10px 30px;border-radius:12px;letter-spacing:2px;border:4px solid #14110f}
     .leg{position:absolute;left:60px;right:60px;top:1500px;text-align:center;font-weight:900;font-size:58px;line-height:1.15;-webkit-text-stroke:11px #14110f;paint-order:stroke fill}
-    .VOCE{color:#fff}.ANA{color:#ffd21f}
+    .VOCE{color:#fff}.NARRADOR{color:#fff}.ANA{color:#ffd21f}
     .enq{position:absolute;left:90px;right:90px;top:520px;text-align:center}
     .enq h1{color:#fff;font-weight:900;font-size:92px;line-height:1.02;-webkit-text-stroke:14px #14110f;paint-order:stroke fill;margin-bottom:40px}
     .bt{display:flex;align-items:center;gap:22px;color:#fff;font-weight:900;font-size:56px;text-align:left;padding:30px 36px;border-radius:24px;border:6px solid #14110f;margin:0 0 28px;line-height:1.05}

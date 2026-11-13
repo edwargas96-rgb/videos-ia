@@ -54,6 +54,7 @@ export function texturaCanvas(w, h, desenho, repetir = null) {
   desenho(k.getContext("2d"), w, h);
   const t = new THREE.CanvasTexture(k);
   t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 8;
   if (repetir) { t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(...repetir); }
   return t;
 }

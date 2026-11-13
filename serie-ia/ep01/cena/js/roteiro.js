@@ -5,15 +5,26 @@ export const DURACAO = 94;
 
 // q: quem fala (VOCE em branco, ANA em amarelo)
 export const FALAS = [
-  { q: "VOCE", t0: 5.4, t1: 6.6, txt: "De quem é isso?" },
-  { q: "VOCE", t0: 10.2, t1: 11.0, txt: "Ana?" },
-  { q: "VOCE", t0: 13.0, t1: 14.8, txt: "Aniversário do Tobi..." },
-  { q: "VOCE", t0: 29.6, t1: 30.6, txt: "Um..." },
-  { q: "VOCE", t0: 31.6, t1: 32.6, txt: "...oito..." },
-  { q: "VOCE", t0: 33.6, t1: 34.6, txt: "...zero..." },
-  { q: "VOCE", t0: 35.6, t1: 36.6, txt: "...sete." },
-  { q: "VOCE", t0: 37.4, t1: 38.9, txt: "Dezoito do sete." },
-  { q: "VOCE", t0: 40.8, t1: 43.0, txt: "Vou ligar pra alguém que conhece ela." },
+  { q: "NARRADOR", t0: 0.3, t1: 2.9, txt: "Você acordou e estava se arrumando pra ir pro trabalho." },
+  { q: "NARRADOR", t0: 3.0, t1: 5.3, txt: "Mas, quando abriu a porta, tinha um celular no chão." },
+  { q: "NARRADOR", t0: 5.5, t1: 6.5, txt: "Vibrando." },
+  { q: "NARRADOR", t0: 7.4, t1: 8.8, txt: "Você pegou e ligou a tela." },
+  { q: "NARRADOR", t0: 9.0, t1: 11.5, txt: "Uma chamada perdida, uma mensagem... e a foto de uma menina: Ana." },
+  { q: "NARRADOR", t0: 12.2, t1: 14.8, txt: "Pra desbloquear, a dica era: aniversário do Tobi." },
+  { q: "NARRADOR", t0: 15.0, t1: 16.8, txt: "Você tentou zero, zero, zero, zero." },
+  { q: "NARRADOR", t0: 17.6, t1: 20.2, txt: "E o celular travou. As horas começaram a voar." },
+  { q: "NARRADOR", t0: 21.2, t1: 23.6, txt: "Alguém, do outro lado, escreveu no teclado." },
+  { q: "NARRADOR", t0: 27.3, t1: 29.4, txt: "Todas as teclas viraram o número um." },
+  { q: "NARRADOR", t0: 29.8, t1: 31.4, txt: "Você apertou... virou oito." },
+  { q: "NARRADOR", t0: 31.8, t1: 33.4, txt: "Apertou de novo... zero." },
+  { q: "NARRADOR", t0: 33.8, t1: 35.4, txt: "Depois... sete." },
+  { q: "NARRADOR", t0: 35.8, t1: 38.2, txt: "E o celular abriu. Dezoito do sete." },
+  { q: "NARRADOR", t0: 38.8, t1: 40.9, txt: "Os aplicativos cheios de notificação." },
+  { q: "NARRADOR", t0: 41.1, t1: 43.3, txt: "Você pensou em ligar pra alguém que conhecesse ela." },
+  { q: "NARRADOR", t0: 44.4, t1: 46.4, txt: "Mas o celular travou de novo." },
+  { q: "NARRADOR", t0: 46.8, t1: 49.6, txt: "A data pulou pro dia seguinte. E os aplicativos foram virando galeria." },
+  { q: "NARRADOR", t0: 50.0, t1: 52.2, txt: "Até sobrar só a galeria." },
+  { q: "NARRADOR", t0: 52.6, t1: 54.2, txt: "Dentro, só vídeos dela." },
   { q: "ANA", t0: 56.8, t1: 59.4, txt: "Se você olhar nos meus olhos..." },
   { q: "ANA", t0: 60.0, t1: 62.8, txt: "...você vai ver ele me olhando de volta." },
   { q: "ANA", t0: 65.6, t1: 68.4, txt: "Eu não quero que ele pegue mais ninguém." },
@@ -21,6 +32,7 @@ export const FALAS = [
   { q: "ANA", t0: 74.0, t1: 76.2, txt: "Se você está vendo esse vídeo..." },
   { q: "ANA", t0: 76.8, t1: 78.8, txt: "...não venha me encontrar." },
   { q: "ANA", t0: 79.9, t1: 81.6, txt: "Não... não, não, não!" },
+  { q: "NARRADOR", t0: 83.8, t1: 85.6, txt: "E o celular voltou pra tela inicial." },
 ];
 
 // Os acontecimentos
