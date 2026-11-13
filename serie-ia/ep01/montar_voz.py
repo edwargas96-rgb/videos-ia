@@ -50,22 +50,58 @@ FALAS = [
     ("NARRADOR", 52.62, 54.78, 84.8, "E o celular voltou pra tela inicial."),
 ]
 
+def energia(x, passo):
+    n = len(x) // passo
+    return np.sqrt(np.mean(x[: n * passo].reshape(n, passo) ** 2, axis=1) + 1e-12)
+
+def cortes_no_silencio(src, falas):
+    """Para cada fala, acha onde cortar no silêncio de verdade (não no tempo da transcrição),
+    para não comer o começo nem o fim das palavras."""
+    passo = int(0.01 * SR)
+    e = energia(src, passo)
+    def minimo(t0, t1):
+        i0, i1 = max(0, int(t0 / 0.01)), min(len(e) - 1, int(t1 / 0.01))
+        if i1 <= i0: return t0
+        return (i0 + int(np.argmin(e[i0:i1]))) * 0.01
+    res = []
+    for k, (a, b) in enumerate(falas):
+        ini = 0.0 if k == 0 else minimo(falas[k - 1][1] - 0.05, a + 0.08)
+        fim = len(src) / SR if k == len(falas) - 1 else minimo(b - 0.08, falas[k + 1][0] + 0.05)
+        res.append((ini, fim))
+    return res
+
+RESPIRO = 0.12   # silêncio mínimo entre uma fala e a próxima
+
 def main():
     mix = np.zeros(int(DUR * SR), dtype=np.float32)
-    legendas = []
-    for quem, a, b, t, txt in FALAS:
-        src = NARR if quem == "NARRADOR" else ANA
-        seg = src[int(a * SR):int(b * SR)].copy()
-        f = int(0.015 * SR)                       # entrada e saída suaves (sem estalo)
+    pecas = []
+    for quem, src in (("NARRADOR", NARR), ("ANA", ANA)):
+        idx = [i for i, f in enumerate(FALAS) if f[0] == quem]
+        cortes = cortes_no_silencio(src, [(FALAS[i][1], FALAS[i][2]) for i in idx])
+        for i, (ca, cb) in zip(idx, cortes):
+            _, a, b, t, txt = FALAS[i]
+            pecas.append(dict(q=quem, src=src, ca=ca, cb=cb, a=a, b=b, t=t, txt=txt))
+    pecas.sort(key=lambda p: p["t"] - (p["a"] - p["ca"]))
+    fim_ant = -1
+    for p in pecas:
+        ini = p["t"] - (p["a"] - p["ca"])
+        voz_ini = p["t"] - 0.0                       # onde a fala de fato começa
+        if voz_ini < fim_ant + RESPIRO:                  # empurra só o necessário
+            d = fim_ant + RESPIRO - voz_ini
+            p["t"] += d; ini += d
+            print(f"empurrei {d:.2f} s: {p['txt'][:40]}")
+        seg = p["src"][int(p["ca"] * SR):int(p["cb"] * SR)].copy()
+        f = int(0.02 * SR)
         seg[:f] *= np.linspace(0, 1, f); seg[-f:] *= np.linspace(1, 0, f)
-        i = int(t * SR)
-        mix[i:i + len(seg)] += seg[: len(mix) - i]
-        legendas.append({"q": quem, "t0": round(t, 2), "t1": round(t + (b - a), 2), "txt": txt})
+        j = int(ini * SR)
+        mix[j:j + len(seg)] += seg[: len(mix) - j]
+        fim_ant = p["t"] + (p["b"] - p["a"])             # onde a fala de fato termina
     mix /= max(1e-9, float(np.max(np.abs(mix)))) / 0.95
     out = (np.clip(mix, -1, 1) * 32767).astype(np.int16)
     import wave
     with wave.open(str(AQUI / "voz.wav"), "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(out.tobytes())
+    legendas = [{"q": p["q"], "t0": round(p["t"], 2), "t1": round(p["t"] + p["b"] - p["a"], 2), "txt": p["txt"]} for p in pecas]
     (AQUI / "falas.json").write_text(json.dumps(legendas, ensure_ascii=False, indent=1))
     for l in legendas:
         print(f"{l['t0']:6.2f}-{l['t1']:6.2f} {l['q']:8} {l['txt']}")

@@ -375,12 +375,12 @@ export function criarCena(canvas, raiz) {
   const css = document.createElement("style");
   css.textContent = `
     .camada{position:absolute;inset:0;pointer-events:none;font-family:"Arial Black",Arial,sans-serif}
-    .parte{position:absolute;top:150px;left:50%;transform:translateX(-50%);background:#c8231f;color:#fff;font-weight:900;font-size:44px;padding:10px 30px;border-radius:12px;letter-spacing:2px;border:4px solid #14110f}
-    .leg{position:absolute;left:60px;right:60px;top:1500px;text-align:center;font-weight:900;font-size:58px;line-height:1.15;-webkit-text-stroke:11px #14110f;paint-order:stroke fill}
+    .parte{position:absolute;top:270px;left:50%;transform:translateX(-50%);background:#c8231f;color:#fff;font-weight:900;font-size:44px;padding:10px 30px;border-radius:12px;letter-spacing:2px;border:4px solid #14110f}
+    .leg{position:absolute;left:70px;right:170px;top:1290px;text-align:center;font-weight:900;font-size:54px;line-height:1.15;-webkit-text-stroke:11px #14110f;paint-order:stroke fill}
     .VOCE{color:#fff}.NARRADOR{color:#fff}.ANA{color:#ffd21f}
-    .enq{position:absolute;left:90px;right:90px;top:520px;text-align:center}
-    .enq h1{color:#fff;font-weight:900;font-size:92px;line-height:1.02;-webkit-text-stroke:14px #14110f;paint-order:stroke fill;margin-bottom:40px}
-    .bt{display:flex;align-items:center;gap:22px;color:#fff;font-weight:900;font-size:56px;text-align:left;padding:30px 36px;border-radius:24px;border:6px solid #14110f;margin:0 0 28px;line-height:1.05}
+    .enq{position:absolute;left:70px;right:170px;top:420px;text-align:center}
+    .enq h1{color:#fff;font-weight:900;font-size:84px;line-height:1.02;-webkit-text-stroke:14px #14110f;paint-order:stroke fill;margin-bottom:40px}
+    .bt{display:flex;align-items:center;gap:22px;color:#fff;font-weight:900;font-size:52px;text-align:left;padding:30px 36px;border-radius:24px;border:6px solid #14110f;margin:0 0 28px;line-height:1.05}
     .bt.v{background:#c8231f}.bt.a{background:#2c5d7c}
     .com{color:#ffd21f;font-weight:900;font-size:50px;-webkit-text-stroke:10px #14110f;paint-order:stroke fill;margin-top:8px}`;
   document.head.appendChild(css);
