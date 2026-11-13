@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 
 SR = 48000
-DUR = 94.0
+DUR = 96.0
 rng = np.random.default_rng(1807)
 N = int(SR * DUR)
 mix = np.zeros(N)
@@ -168,7 +168,7 @@ put(v0, lp_fast(ruido(dv), 600) * 0.15, 1)   # o chiado do vídeo
 for t in np.arange(v0 + 0.3, v0 + 2.6, 0.75):   # a respiração dela
     d = 0.5
     put(t, lp_fast(ruido(d), 1200) * np.sin(np.linspace(0, np.pi, int(d * SR))), 0.12)
-for a, b in [(62.9, 65.4), (71.3, 73.8)]:      # soluços
+for a, b in [(64.8, 66.9), (72.3, 74.8)]:      # soluços
     for t in np.arange(a, b, 0.42):
         d = 0.22
         put(t, lp_fast(ruido(d), 1500) * np.sin(np.linspace(0, np.pi, int(d * SR))) ** 2, 0.18)

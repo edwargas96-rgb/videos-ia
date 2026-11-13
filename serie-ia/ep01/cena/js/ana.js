@@ -189,7 +189,7 @@ export function criarAna() {
     }
     // a fala: a boca abre e fecha; chorando, os ombros tremem
     const f = falandoEm(t);
-    const choro = (t > 62.9 && t < 65.4) || (t > 71.3 && t < 73.8);
+    const choro = E.choro.some(([a, b]) => t > a && t < b);
     let abre = 0.25;
     if (f) abre = 0.35 + 0.65 * Math.abs(Math.sin((t - f.t0) * 13.5) * Math.sin((t - f.t0) * 4.1 + 0.6));
     if (choro) abre = 0.55 + 0.3 * Math.abs(Math.sin(t * 7));

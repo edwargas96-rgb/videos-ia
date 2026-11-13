@@ -1,0 +1,158 @@
+[
+ {
+  "q": "NARRADOR",
+  "t0": 0.3,
+  "t1": 3.25,
+  "txt": "Você acordou e estava se arrumando pra ir pro trabalho."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 3.3,
+  "t1": 7.85,
+  "txt": "Mas, quando abriu a porta, tinha um celular no chão, vibrando."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 8.0,
+  "t1": 9.83,
+  "txt": "Você pegou e ligou a tela."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 9.9,
+  "t1": 14.45,
+  "txt": "Uma chamada perdida, uma mensagem e a foto de uma menina: Ana."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 14.5,
+  "t1": 17.8,
+  "txt": "Pra desbloquear, a dica era: aniversário do Tobi."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 17.8,
+  "t1": 21.06,
+  "txt": "Você tentou zero, zero, zero, zero."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 21.3,
+  "t1": 22.74,
+  "txt": "E o celular travou."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 22.8,
+  "t1": 24.46,
+  "txt": "As horas começaram a voar."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 25.0,
+  "t1": 28.3,
+  "txt": "Alguém do outro lado escreveu HELP ME no teclado."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 31.3,
+  "t1": 33.54,
+  "txt": "Todas as teclas viraram o número um."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 33.6,
+  "t1": 35.48,
+  "txt": "Você apertou... virou oito."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 35.6,
+  "t1": 37.36,
+  "txt": "Apertou de novo... zero."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 37.4,
+  "t1": 38.72,
+  "txt": "Depois... sete."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 38.9,
+  "t1": 41.36,
+  "txt": "E o celular abriu. Dezoito do sete."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 42.0,
+  "t1": 43.94,
+  "txt": "Os aplicativos cheios de notificação."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 44.0,
+  "t1": 46.48,
+  "txt": "Você pensou em ligar pra alguém que conhecesse ela."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 47.0,
+  "t1": 48.76,
+  "txt": "Mas o celular travou de novo."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 48.8,
+  "t1": 50.54,
+  "txt": "A data pulou pro dia seguinte."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 50.6,
+  "t1": 54.6,
+  "txt": "E os aplicativos foram virando galeria, até sobrar só a galeria."
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 55.6,
+  "t1": 57.32,
+  "txt": "Dentro, só vídeos dela."
+ },
+ {
+  "q": "ANA",
+  "t0": 60.2,
+  "t1": 64.68,
+  "txt": "Se você olhar nos meus olhos, você vai ver ele me olhando de volta."
+ },
+ {
+  "q": "ANA",
+  "t0": 67.0,
+  "t1": 69.54,
+  "txt": "Eu não quero que ele pegue mais ninguém."
+ },
+ {
+  "q": "ANA",
+  "t0": 70.3,
+  "t1": 72.2,
+  "txt": "Eu só queria ser feliz."
+ },
+ {
+  "q": "ANA",
+  "t0": 75.0,
+  "t1": 78.7,
+  "txt": "Se você está vendo esse vídeo... não venha me encontrar."
+ },
+ {
+  "q": "ANA",
+  "t0": 80.6,
+  "t1": 83.83,
+  "txt": "Não... não, não, não!"
+ },
+ {
+  "q": "NARRADOR",
+  "t0": 84.8,
+  "t1": 86.96,
+  "txt": "E o celular voltou pra tela inicial."
+ }
+]
