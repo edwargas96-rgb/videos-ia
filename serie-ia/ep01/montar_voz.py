@@ -18,6 +18,9 @@ def ler(arq):
     return np.frombuffer(raw, dtype=np.float32)
 
 NARR = ler(AQUI / "narrador.wav")
+# a pergunta final (gerada depois) entra no fim da narração, depois de 1 s de silêncio
+FINAL_INI = len(NARR) / SR + 1.0
+NARR = np.concatenate([NARR, np.zeros(SR, dtype=np.float32), ler(AQUI / "narrador-final.mp3")])
 ANA = ler(AQUI / "ana-original.mp3")
 
 # (quem, início no áudio original, fim, segundo no vídeo, legenda)
@@ -48,6 +51,7 @@ FALAS = [
     ("ANA", 10.42, 14.12, 75.0, "Se você está vendo esse vídeo... não venha me encontrar."),
     ("ANA", 14.32, 17.55, 80.6, "Não... não, não, não!"),
     ("NARRADOR", 52.62, 54.78, 84.8, "E o celular voltou pra tela inicial."),
+    ("NARRADOR", FINAL_INI + 0.0, FINAL_INI + 5.95, 87.6, "E agora... o que você faria? Ajudar a Ana... ou largar o celular? Deixa nos comentários."),
 ]
 
 def energia(x, passo):

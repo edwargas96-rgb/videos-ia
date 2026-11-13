@@ -32,6 +32,7 @@ export const FALAS = [
   { q: "ANA", t0: 75.0, t1: 78.7, txt: "Se você está vendo esse vídeo... não venha me encontrar." },
   { q: "ANA", t0: 80.6, t1: 83.83, txt: "Não... não, não, não!" },
   { q: "NARRADOR", t0: 84.8, t1: 86.96, txt: "E o celular voltou pra tela inicial." },
+  { q: "NARRADOR", t0: 87.6, t1: 93.55, txt: "E agora... o que você faria? Ajudar a Ana... ou largar o celular? Deixa nos comentários." },
 ];
 
 // Os acontecimentos
