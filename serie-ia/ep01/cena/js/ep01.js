@@ -18,17 +18,49 @@ export function criarCena(canvas, raiz) {
   const r = new THREE.WebGLRenderer({ canvas, antialias: false, preserveDrawingBuffer: true });
   r.setPixelRatio(1);
   r.setSize(W, H, false);
+  r.shadowMap.enabled = true;
+  r.shadowMap.type = THREE.PCFSoftShadowMap;
   r.outputColorSpace = THREE.SRGBColorSpace;
 
   // ---------------- o cenário ----------------
   const cena = new THREE.Scene();
   cena.background = new THREE.Color(0x111111);
-  cena.add(new THREE.HemisphereLight(0xfff3e0, 0x6a5848, 0.85));
-  const sol = new THREE.DirectionalLight(0xffe2b8, 1.0);
+  cena.add(new THREE.HemisphereLight(0xfff3e0, 0x6a5848, 0.6));
+  const sol = new THREE.DirectionalLight(0xffe2b8, 0.55);
+  // luz do lustre (quarto) e da lâmpada do corredor, com sombra
+  const luzSombra = (cor, int, pos, alvo) => {
+    const l = new THREE.SpotLight(cor, int, 8, 1.15, 0.7, 1.4);
+    l.position.set(...pos); l.target.position.set(...alvo);
+    l.castShadow = true; l.shadow.mapSize.set(1024, 1024); l.shadow.bias = -0.0006; l.shadow.normalBias = 0.02;
+    l.shadow.camera.near = 0.2; l.shadow.camera.far = 8;
+    cena.add(l, l.target);
+    return l;
+  };
+  luzSombra(0xffeccc, 16, [0, 2.42, -0.9], [0, 0, -0.9]);
+  luzSombra(0xeef4ff, 13, [0.3, 2.5, -4.1], [0.3, 0, -4.1]);
   sol.position.set(3, 4, 2);
   cena.add(sol);
 
-  const parede = mat(0xe8dcc4), faixa = mat(0x5f8a72), madeira = 0x7a4b2b;
+  const ruido = (n) => { const x = Math.sin(n * 12.9898) * 43758.5453; return x - Math.floor(x); };
+  const reboco = (base, var_) => texturaCanvas(256, 256, (x, w, h) => {
+    x.fillStyle = base; x.fillRect(0, 0, w, h);
+    for (let i = 0; i < 2600; i++) {
+      const a = ruido(i * 3.1), b = ruido(i * 7.7), c = ruido(i * 1.3);
+      x.fillStyle = c > 0.5 ? `rgba(255,255,255,${0.05 * var_})` : `rgba(0,0,0,${0.06 * var_})`;
+      x.fillRect(a * w, b * h, 1 + c * 3, 1 + c * 3);
+    }
+  }, [3, 2]);
+  const parede = mat(0xffffff, { map: reboco("#e8dcc4", 1) }), faixa = mat(0xffffff, { map: reboco("#5f8a72", 1.4) }), madeira = 0x7a4b2b;
+  const veio = texturaCanvas(256, 512, (x, w, h) => {
+    x.fillStyle = "#7a4b2b"; x.fillRect(0, 0, w, h);
+    for (let i = 0; i < 60; i++) {
+      const xx = ruido(i * 5.3) * w, ww = 1 + ruido(i * 2.1) * 3;
+      x.fillStyle = ruido(i) > 0.5 ? "rgba(40,20,8,0.25)" : "rgba(160,110,70,0.18)";
+      x.beginPath(); x.moveTo(xx, 0);
+      for (let y = 0; y <= h; y += 32) x.lineTo(xx + Math.sin(y * 0.02 + i) * 6, y);
+      x.lineTo(xx + ww, h); x.lineTo(xx + ww, 0); x.fill();
+    }
+  });
   const chaoQuarto = new THREE.Mesh(new THREE.PlaneGeometry(4.4, 4.2), mat(0xffffff, {
     map: texturaCanvas(512, 512, (x, w, h) => {
       x.fillStyle = "#a8774e"; x.fillRect(0, 0, w, h);
@@ -68,7 +100,7 @@ export function criarCena(canvas, raiz) {
   // a porta (dobradiça à esquerda, abre para dentro)
   const porta = new THREE.Group();
   porta.position.set(-0.45, 0, -3.0);
-  const folha = peca(caixa(0.9, 2.04, 0.05, 0.01), madeira, { contorno: 0.008 });
+  const folha = peca(caixa(0.9, 2.04, 0.05, 0.01), 0xffffff, { contorno: 0.008, extra: { map: veio } });
   folha.position.set(0.45, 1.02, 0);
   porta.add(folha);
   for (const y of [0.55, 1.45]) {
@@ -148,7 +180,7 @@ export function criarCena(canvas, raiz) {
   }));
   chaoCorr.rotation.x = -Math.PI / 2; chaoCorr.position.set(0, 0, -4.1);
   corredor.add(chaoCorr);
-  const paredeCorr = mat(0xc9d3c4), faixaCorr = mat(0x3f5a6b);
+  const paredeCorr = mat(0xffffff, { map: reboco("#c9d3c4", 1) }), faixaCorr = mat(0xffffff, { map: reboco("#3f5a6b", 1.4) });
   const pf = new THREE.Mesh(new THREE.PlaneGeometry(10, 2.6), paredeCorr);
   pf.position.set(0, 1.3, -5.2); corredor.add(pf);
   const ff = new THREE.Mesh(new THREE.PlaneGeometry(10, 1.0), faixaCorr);
@@ -162,7 +194,7 @@ export function criarCena(canvas, raiz) {
     lamp.rotation.x = Math.PI / 2; lamp.position.set(x, 2.59, -4.1); corredor.add(lamp);
   }
   // a porta do vizinho, em frente
-  const portaViz = peca(caixa(0.9, 2.04, 0.05, 0.01), 0x5a3a26, { contorno: 0.008 });
+  const portaViz = peca(caixa(0.9, 2.04, 0.05, 0.01), 0xb08a70, { contorno: 0.008, extra: { map: veio } });
   portaViz.position.set(0.2, 1.02, -5.17); corredor.add(portaViz);
   const numero = new THREE.Mesh(new THREE.PlaneGeometry(0.22, 0.12), new THREE.MeshBasicMaterial({
     map: texturaCanvas(128, 64, (x, w, h) => { x.fillStyle = "#d8b24a"; x.fillRect(0, 0, w, h); x.fillStyle = "#2a1a10"; x.font = "900 44px Arial"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText("304", w / 2, h / 2 + 2); }),
@@ -171,6 +203,8 @@ export function criarCena(canvas, raiz) {
   const capacho = peca(caixa(0.75, 0.025, 0.48, 0.01), 0x7a2f2a, { contorno: 0.006 });
   capacho.position.set(0.08, 0.012, -3.5); corredor.add(capacho);
   cena.add(corredor);
+
+  cena.traverse((o) => { if (o.isMesh && o.material && o.material.side !== THREE.BackSide && !o.material.isMeshBasicMaterial) { o.receiveShadow = true; } });
 
   // ---------------- o seu corpo: tronco, pernas, mãos ----------------
   const corpo = new THREE.Group();

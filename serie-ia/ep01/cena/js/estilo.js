@@ -5,8 +5,8 @@ import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.j
 let gradiente = null;
 function grad() {
   if (gradiente) return gradiente;
-  const d = new Uint8Array([90, 170, 255]);
-  gradiente = new THREE.DataTexture(d, 3, 1, THREE.RedFormat);
+  const d = new Uint8Array([70, 120, 170, 215, 255]);
+  gradiente = new THREE.DataTexture(d, 5, 1, THREE.RedFormat);
   gradiente.minFilter = gradiente.magFilter = THREE.NearestFilter;
   gradiente.needsUpdate = true;
   return gradiente;
@@ -30,6 +30,7 @@ export const mat = (cor, o = {}) => new THREE.MeshToonMaterial({ color: cor, gra
 export function peca(geo, cor, o = {}) {
   const g = new THREE.Group();
   const m = new THREE.Mesh(geo, o.material || mat(cor, o.extra || {}));
+  m.castShadow = m.receiveShadow = true;
   g.add(m);
   if (o.contorno !== 0) g.add(new THREE.Mesh(geo, contorno(o.contorno ?? 0.012)));
   g.userData.malha = m;
