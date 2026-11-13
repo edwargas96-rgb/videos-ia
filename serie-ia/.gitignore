@@ -1,0 +1,11 @@
+# Vídeos e quadros das referências: são de outros perfis, ficam só no computador
+referencia/*.mp4
+referencia/*.info.json
+quadros/
+# Render: vídeos, áudio e arquivos temporários do HyperFrames
+*.mp4
+*.wav
+.hyperframes/
+ep01/work-*/
+ep01/.video-*/
+*.mp3
