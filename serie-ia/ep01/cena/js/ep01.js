@@ -547,10 +547,10 @@ export function criarCena(canvas, raiz) {
     r.render(cenaPos, camPos);
 
     // textos
-    parte.style.display = t < 3.6 ? "" : "none";
+    parte.style.display = t < 3.6 && !window.__semLegenda ? "" : "none";
     parte.style.transform = `translateX(-50%) scale(${t < 0.15 ? 0.5 + t * 3 : 1})`;
     const f = FALAS.find((f) => t >= f.t0 && t < f.t1 + 0.35);
-    if (f) { leg.textContent = f.txt; leg.className = "leg " + f.q; leg.style.display = ""; }
+    if (f && !window.__semLegenda) { leg.textContent = f.txt; leg.className = "leg " + f.q; leg.style.display = ""; }
     else leg.style.display = "none";
     const en = ramp(t, E.enquete, E.enquete + 0.35, easeOut);
     enq.style.display = t >= E.enquete ? "" : "none";
