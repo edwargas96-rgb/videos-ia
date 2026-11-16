@@ -382,7 +382,7 @@ export function criarTela(foto, fotos) {
       c.save(); c.globalAlpha = u; c.translate(0, (1 - u) * -30);
       ret(20, y, SW - 40, 80, 20, "rgba(22,24,32,0.9)");
       c.beginPath(); c.arc(60, y + 40, 22, 0, 7); c.fillStyle = "#7a5a40"; c.fill();
-      if (fotos.greg) { c.save(); c.beginPath(); c.arc(60, y + 40, 22, 0, 7); c.clip(); recorte(fotos.greg, 38, y + 18, 44, 44, 0.3, 0.3, 0.4, 0.2); c.restore(); }
+      if (fotos.greg) { c.save(); c.beginPath(); c.arc(60, y + 40, 22, 0, 7); c.clip(); recorte(fotos.greg, 38, y + 18, 44, 44, 0.0, 0.22, 1.0, 0.48); c.restore(); }
       txt("Greg ❤️", 96, y + 26, 22, "#fff", 700, "left");
       txt(linhas[i], 96, y + 56, 20, "rgba(255,255,255,0.8)", 500, "left");
       c.restore();
@@ -452,7 +452,7 @@ export function criarTela(foto, fotos) {
     c.fillStyle = "#232634"; c.fillRect(0, 56, SW, 84);
     txt("‹", 22, 98, 44, "#8cf", 400, "left");
     c.beginPath(); c.arc(84, 98, 28, 0, 7); c.fillStyle = cor; c.fill();
-    if (nome.startsWith("Greg") && fotos.greg) { c.save(); c.beginPath(); c.arc(84, 98, 28, 0, 7); c.clip(); recorte(fotos.greg, 56, 70, 56, 56, 0.3, 0.3, 0.4, 0.2); c.restore(); }
+    if (nome.startsWith("Greg") && fotos.greg) { c.save(); c.beginPath(); c.arc(84, 98, 28, 0, 7); c.clip(); recorte(fotos.greg, 56, 70, 56, 56, 0.0, 0.22, 1.0, 0.48); c.restore(); }
     else txt(nome[0], 84, 99, 30, "#fff", 800);
     txt(nome, 128, 98, 28, "#fff", 700, "left");
     let y = 160;
@@ -476,7 +476,7 @@ export function criarTela(foto, fotos) {
     const p = 1 + 0.08 * Math.abs(Math.sin((t - E.liga) * 4));
     c.save(); c.translate(SW / 2, 330); c.scale(p, p);
     c.beginPath(); c.arc(0, 0, 112, 0, 7); c.fillStyle = "rgba(255,255,255,0.08)"; c.fill();
-    c.beginPath(); c.arc(0, 0, 96, 0, 7); c.clip(); if (fotos.greg) recorte(fotos.greg, -96, -96, 192, 192, 0.28, 0.28, 0.44, 0.22); c.restore();
+    c.beginPath(); c.arc(0, 0, 96, 0, 7); c.clip(); if (fotos.greg) recorte(fotos.greg, -96, -96, 192, 192, 0.0, 0.22, 1.0, 0.48); c.restore();
     txt("Greg ❤️", SW / 2, 500, 46, "#fff", 700);
     txt("chamando...", SW / 2, 552, 24, "rgba(255,255,255,0.7)", 500);
     const b = 1 + 0.1 * Math.sin(t * 8);
