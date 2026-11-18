@@ -231,17 +231,29 @@ Não tem roteiro fixo. A ideia é **deixar a câmera rodando o dia todo** e mont
 
 ---
 
-## Sugestão de calendário (7 por semana)
+## Calendário (7 por semana, as três aparecendo igual)
+
+**Regra de ouro:** toda semana tem **1 solo de cada** · se tiver dupla, tem **uma de cada par** (Kali+Safira, Safira+Lia, Kali+Lia) · vídeo com as três conta pra todas.
 
 | | Seg | Ter | Qua | Qui | Sex | Sáb | Dom |
 |---|---|---|---|---|---|---|---|
-| **Semana 1** | 11 Kali (círculo) | 13 Lia (conheça) | **06 Papo Ep.1** | 04 Safira (signo) | **07 Papo Ep.2** | 01 Safira+Lia (balão) | **16 Backstage** |
-| **Semana 2** | 10 Kali (piada ruim) | 12 Safira (ouço) | **08 Conta Ep.1** | 14 Lia (trava-língua) | **09 Conta Ep.2** | 02 Safira (wi-fi) | 15 Kali+Lia (guarda-chuva) |
-| **Semana 3** | 05 Kali (posso escolher) | 03 Lia (pé) | **17 Backstage** | | | | |
+| **Semana 1** | 13 Lia (conheça) | 01 Safira+Lia (balão) | 11 Kali (círculo) | 15 Kali+Lia (guarda-chuva) | 04 Safira (signo) | **08 Conta Ep.1** (Kali+Safira) | **16 Backstage** (as três) |
+| **Semana 2** | **06 Papo Ep.1** | **09 Conta Ep.2** | **07 Papo Ep.2** | 10 Kali (piada ruim) | 12 Safira (ouço) | 14 Lia (trava-língua) | **17 Backstage** |
+| **Semana 3** | 05 Kali (posso escolher) | | 02 Safira (wi-fi) | | 03 Lia (pé) | | |
 
-- O **Ep. 2 sai sempre 2 dias depois do Ep. 1** (dá tempo do público pedir a continuação).
-- A **Lia aparece cedo** (terça da semana 1) pra quem não conhece ela entender quem é antes das minisséries.
-- O backstage fecha cada ciclo.
+**Quantas vezes cada uma aparece:**
+| | Semana 1 | Semana 2 | Semana 3 (parcial) |
+|---|---|---|---|
+| Kali | 4 (11, 15, 08, 16) | 5 (06, 09, 07, 10, 17) | 1 (05) |
+| Safira | 4 (01, 04, 08, 16) | 5 (06, 09, 07, 12, 17) | 1 (02) |
+| Lia | 4 (13, 01, 15, 16) | 5 (06, 09, 07, 14, 17) | 1 (03) |
+
+- A **Lia abre a semana 1** com a apresentação dela.
+- O **Ep.1 do "Uma conta da outra"** fecha a semana 1 e o **Ep.2** sai na terça seguinte. O **Papo Joinville** sai segunda e quarta da semana 2.
+- A **semana 3** fica com 3 vídeos (1 de cada) — os outros 4 entram da próxima gravação.
+
+**Modelo pras próximas gravações (7 vídeos = 4 aparições pra cada):**
+3 solos (1 de cada) + 3 duplas (Kali+Safira, Safira+Lia, Kali+Lia) + 1 com as três (série ou backstage).
 
 ## Ordem sugerida pra gravar na terça
 1. Solos de apresentação (13, 11) — elas ainda "frescas".
