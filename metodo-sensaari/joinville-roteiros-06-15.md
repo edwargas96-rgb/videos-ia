@@ -12,8 +12,8 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 | # | Vídeo | Quem | Tipo |
 |---|---|---|---|
 | 01 | Estourou antes da hora (balão) | Safira + Lia | Duplo sentido (já entregue) |
-| 02 | A senha do wi-fi | Kali + Safira | Duplo sentido (já entregue) |
-| 03 | Adivinhando com o pé (banana) | Lia (pés) + Kali | Série de pés (já entregue) |
+| 02 | A senha do wi-fi (versão solo) | Safira (+ voz fora do vídeo) | Solo / duplo sentido |
+| 03 | Adivinhando com o pé (versão solo) | Lia | Solo / série de pés |
 | 04 | Quanto tempo cada signo aguenta | Safira | Solo / trend (já entregue) |
 | 05 | Posso escolher? | Kali | Solo / venda (já entregue) |
 | 06 | Papo Joinville — Ep. 1: Primeira impressão | As três | **Minissérie A** |
@@ -23,13 +23,42 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 | 10 | A piada ruim da Kali | Kali | Solo / sem graça |
 | 11 | Pressione no círculo (com reviravolta) | Kali | Solo / trend |
 | 12 | Coisas que eu ouço toda semana | Safira | Solo / sem graça |
-| 13 | Conheça a Lia (entrevista) | Lia (+ voz da Kali) | Solo / apresentação |
+| 13 | Conheça a Lia (entrevista) | Lia (+ voz fora do vídeo) | Solo / apresentação |
 | 14 | Trava-língua de Joinville | Lia | Solo / sem graça |
 | 15 | O guarda-chuva | Kali + Lia | Duplo sentido |
 | 16 | Erros de gravação 1 | As três | Backstage |
 | 17 | Erros de gravação 2 | As três | Backstage |
 
-**Divisão:** 7 solos (Kali 3 · Safira 2 · Lia 2) · 4 duplas · 4 de minissérie · 2 backstage.
+**Divisão:** 9 solos (**Kali 3 · Safira 3 · Lia 3**) · 2 duplas · 4 de minissérie · 2 backstage.
+**Aparições por menina (sem contar backstage): Kali 8 · Safira 8 · Lia 8.**
+- Kali: solos 05, 10, 11 · minisséries 06, 07, 08, 09 · dupla 15
+- Safira: solos 02, 04, 12 · minisséries 06, 07, 08, 09 · dupla 01
+- Lia: solos 03, 13, 14 · minisséries 06, 07, 09 · duplas 01, 15
+
+---
+
+## VERSÕES SOLO DO 02 E DO 03 (pra deixar 3 solos pra cada uma)
+
+### 02 — "A senha do wi-fi", versão solo (Safira) · ~12s
+*Safira sentada na recepção, mexendo no celular. Quem pergunta é uma voz fora do vídeo (como se fosse um cliente).*
+- **Voz:** "Safira, qual a senha do wi-fi?"
+- **Safira** (sem tirar o olho do celular, devagar): "**É grande. Tem que colocar tudo, devagarinho, sem pular nada.**"
+- **Voz:** "E se eu errar?"
+- **Safira** (agora olhando pra câmera): "**Aí tem que começar tudo de novo.**" *(piscadinha)*
+- *No final aparece na tela a "senha": `SensaariDuasHoras2026`.*
+
+**O duplo sentido:** igual ao original. Agora é tudo na fala lenta e no olhar da Safira.
+
+### 03 — "Adivinhando com o pé", versão solo (Lia) · ~25s
+*Igual à série da matriz em que a terapeuta narra sozinha. Lia sentada, pés descalços numa bacia com gel e uma banana-nanica escondida. Close nos pés, depois no rosto.*
+- **Lia:** "Adivinhando o que é. **Só com o pé.**"
+- **Lia:** "Hum… **é comprido.** Peraí… **é firme.**"
+- **Lia:** "**Ai, tá melado.** Nossa, tá **escorregando**."
+- **Lia:** "Não… **nem é tão comprido assim.** Hmmm."
+- *Ela pega com a mão e mostra:* "**Ah! É uma banana… nanica.**"
+- *Ela olha pra câmera, sem entender:* "…**Por que vocês tão rindo?**"
+
+**O duplo sentido:** está nas reações. E a Lia termina como a inocente que não percebeu nada.
 
 ---
 
@@ -138,13 +167,13 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 **Duplo sentido:** só no "não dá tempo de nada". O resto é sem graça e simpático.
 
 ### 13 — "Conheça a Lia" (Lia, apresentação) · ~20s
-**Formato igual ao "Conheça a Sol" da matriz:** Lia sentada, **Kali fazendo as perguntas fora do quadro**.
+**Formato igual ao "Conheça a Sol" da matriz:** Lia sentada, **as perguntas são feitas por uma voz fora do vídeo** (quem estiver gravando).
 | Fala |
 |---|
-| **Kali:** "Senta aí, vamos conversar um pouquinho. Qual o seu nome?" **Lia:** "Lia." |
+| **Voz:** "Senta aí, vamos conversar um pouquinho. Qual o seu nome?" **Lia:** "Lia." |
 | "Quantos anos?" **Lia:** "[idade]." |
 | "De onde você é?" **Lia:** "[cidade]." |
-| "Signo?" **Lia:** "[signo]." **Kali:** "Ih." **Lia:** "Ih o quê?" |
+| "Signo?" **Lia:** "[signo]." **Voz:** "Ih." **Lia:** "Ih o quê?" |
 | "Quanto cê calça?" **Lia:** "[número]." |
 | "Uma mania?" **Lia:** "**Arrumar a toalha três vezes antes do cliente chegar.**" |
 | **Lia:** "E me contem: **vocês acham que tava faltando uma Lia em Joinville?**" |
@@ -207,8 +236,8 @@ Não tem roteiro fixo. A ideia é **deixar a câmera rodando o dia todo** e mont
 | | Seg | Ter | Qua | Qui | Sex | Sáb | Dom |
 |---|---|---|---|---|---|---|---|
 | **Semana 1** | 11 Kali (círculo) | 13 Lia (conheça) | **06 Papo Ep.1** | 04 Safira (signo) | **07 Papo Ep.2** | 01 Safira+Lia (balão) | **16 Backstage** |
-| **Semana 2** | 10 Kali (piada ruim) | 12 Safira (ouço) | **08 Conta Ep.1** | 14 Lia (trava-língua) | **09 Conta Ep.2** | 02 Kali+Safira (wi-fi) | 15 Kali+Lia (guarda-chuva) |
-| **Semana 3** | 05 Kali (posso escolher) | 03 Lia+Kali (pé) | **17 Backstage** | | | | |
+| **Semana 2** | 10 Kali (piada ruim) | 12 Safira (ouço) | **08 Conta Ep.1** | 14 Lia (trava-língua) | **09 Conta Ep.2** | 02 Safira (wi-fi) | 15 Kali+Lia (guarda-chuva) |
+| **Semana 3** | 05 Kali (posso escolher) | 03 Lia (pé) | **17 Backstage** | | | | |
 
 - O **Ep. 2 sai sempre 2 dias depois do Ep. 1** (dá tempo do público pedir a continuação).
 - A **Lia aparece cedo** (terça da semana 1) pra quem não conhece ela entender quem é antes das minisséries.

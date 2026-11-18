@@ -50,8 +50,8 @@ Base: 13 vídeos já postados de Joinville (14 arquivos, 1 repetido). Identifica
 | # | Roteiro | Quem | Por quê |
 |---|---|---|---|
 | 01 | Estourou antes da hora (balão) | **Safira** ensina e fecha · **Lia** enche | Lia é a inocente que estoura; Safira fecha provocante ("aqui sempre sobra tempo"). Cria a dupla que ainda não existe. |
-| 02 | Senha do wi-fi | **Safira** fala a senha · **Kali** pergunta e faz careta | "É grande, tem que colocar tudo devagarinho" pede a fala lenta da Safira; a careta pra câmera é da Kali. |
-| 03 | Adivinhando com o pé (banana) | **Lia** (pés) · **Kali** pergunta e fecha | Lia já faz conteúdo de pés; Kali fecha com "pra você é tudo nanica". |
+| 02 | Senha do wi-fi (solo) | **Safira** (pergunta vem de voz fora do vídeo) | "É grande, tem que colocar tudo devagarinho" pede a fala lenta e o olhar da Safira. |
+| 03 | Adivinhando com o pé (solo) | **Lia** | Lia já faz conteúdo de pés; termina inocente: "por que vocês tão rindo?" |
 | 04 | Quanto tempo cada signo aguenta | **Safira** | Trend com tabela e piscadinha — exatamente o que ela faz. |
 | 05 | Posso escolher? | **Kali** | Ela já faz o plantão/informativo sozinha com naturalidade. |
 | 06 | Papo Joinville Ep.1 | **Kali apresenta** · as três | Kali lidera; textos ajustados ao perfil (Safira "metida/linda", Lia "tímida que durou dois dias", Kali "acha que é a chefe"). |
@@ -61,9 +61,11 @@ Base: 13 vídeos já postados de Joinville (14 arquivos, 1 repetido). Identifica
 | 10 | Piada ruim | **Kali** | Palhaça do trio; a careta no final vende a piada. |
 | 11 | Pressione no círculo (com reviravolta) | **Kali** | Comédia física (voltar correndo pelo gel). |
 | 12 | Coisas que eu ouço | **Safira** | Ajustado: "Safira é seu nome de verdade?" → "Foram vocês que escolheram, esqueceram?" (gancho com o vídeo do nome). |
-| 13 | Conheça a Lia | **Lia** (Kali pergunta) | Kali e Safira já fizeram entrevista; a Lia ainda não. |
+| 13 | Conheça a Lia | **Lia** (voz fora do vídeo pergunta) | Kali e Safira já fizeram entrevista; a Lia ainda não. |
 | 14 | Trava-língua | **Lia** | Ri fácil e de verdade — o erro fica natural. |
 | 15 | O guarda-chuva | **Kali** ensina · **Lia** fecha | Melhor dupla. A Lia, "inocente", solta "acostumada a ficar molhada". |
 
-**Conta por menina:** Kali 11 aparições (3 solos) · Safira 8 (2 solos) · Lia 8 (2 solos).
-Se quiser equilibrar a Lia: trocar o **05 (Posso escolher?)** pra ela — a fala calma dela também combina com o tom de FAQ.
+**Conta por menina (igual pras três):** 3 solos e 8 aparições cada (sem contar backstage).
+- **Kali:** solos 05, 10, 11 · minisséries 06, 07, 08, 09 · dupla 15
+- **Safira:** solos 02, 04, 12 · minisséries 06, 07, 08, 09 · dupla 01
+- **Lia:** solos 03, 13, 14 · minisséries 06, 07, 09 · duplas 01, 15
