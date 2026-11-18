@@ -40,8 +40,8 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 | Fala |
 |---|
 | **As três:** "Papo Joinville!" |
-| **Kali** (segurando o microfone): "Qual foi a primeira impressão que vocês tiveram uma da outra? Eu começo. A Safira… **eu achei que ela era brava.**" (pausa) "**Ela é brava.**" |
-| **Safira** (pega o microfone, séria): "Mentira." (olha pra câmera) "…Um pouquinho." |
+| **Kali** (segurando o microfone): "Qual foi a primeira impressão que vocês tiveram uma da outra? Eu começo. A Safira… **eu achei que ela era metida.**" (pausa) "**Ela é metida.**" |
+| **Safira** (pega o microfone, ajeitando o cabelo): "Eu não sou metida." (olha pra câmera, piscadinha) "**Eu sou linda.**" |
 | **Safira:** "A Lia, eu achei que era **tímida**." |
 | **Lia:** "E era!" **Safira:** "**Durou dois dias.**" |
 | **Lia** (pega o microfone): "A Kali eu achei que era **a chefe**." **Kali:** "E eu sou?" **Lia:** "**Não. Mas ela também acha.**" |
@@ -55,8 +55,8 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 
 | Pergunta | Reação |
 |---|---|
-| "…chegar atrasada?" | Kali e Safira apontam pra **Lia**. **Lia:** "Eu chego no horário do cliente. Não no meu." |
-| "…dormir na própria sessão?" | **Safira aponta pra ela mesma**, sem vergonha nenhuma. |
+| "…chegar atrasada?" | Kali e Lia apontam pra **Safira**. **Safira:** "Eu chego no horário. **No horário do meu cabelo.**" |
+| "…dormir na própria sessão?" | **Lia aponta pra ela mesma**, sem vergonha nenhuma, com um sorrisinho. |
 | "…o cliente pedir pra **estender**?" | **As três apontam cada uma pra si mesma.** Silêncio. Se olham. Riem. |
 | "…esquecer o nome do cliente?" | **Kali:** "Quem?" (as outras duas olham pra ela; corte) |
 
@@ -73,8 +73,8 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 | Fala |
 |---|
 | **Kali:** "Três coisas que vocês não sabem sobre a Safira." |
-| "**Um:** ela conversa com as plantas da recepção." **Safira:** "**Elas respondem.**" |
-| "**Dois:** ela tem medo de pomba." **Safira:** "Elas me olham estranho!" |
+| "**Um:** ela demorou uma semana pra escolher o próprio nome. **E ainda pediu ajuda pra vocês.**" **Safira:** "E vocês escolheram certo!" |
+| "**Dois:** ela tira **quarenta fotos** pra postar **uma**." **Safira:** "A luz tem que estar boa, gente!" |
 | "**Três:** ela tem a mão quente. **Sempre.** Até no inverno de Joinville." |
 | **Safira** (olhando pra câmera, séria): "**Isso é verdade. Pode perguntar pros clientes.**" |
 | **Kali:** "Na parte 2…" **Safira:** "**…eu me vingo.**" |
@@ -90,7 +90,7 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 | "E ela **chora em propaganda de margarina**." **Lia:** "A família toma café junta, gente!" |
 | **Lia** (pega a vez): "Agora a Kali." |
 | "A Kali **canta na sala de atendimento** quando tá arrumando." **Kali:** "**É acústica!**" |
-| "E ela tem nome de personagem de jogo… **e nunca jogou nada.**" **Kali:** "Eu jogo… dominó." |
+| "E ela **faz careta em todo vídeo**. Reparem." **Kali** (faz uma careta enorme): "**Eu não faço careta.**" |
 | **As três:** "Qual de nós vocês querem conhecer mais? Comenta!" |
 
 **Legenda:** "Time Kali, time Safira ou time Lia? 👇"
@@ -130,7 +130,7 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 |---|---|
 | "Você é a da foto?" | "Sou." |
 | "Pessoalmente é diferente." | (pausa) "…Obrigada?" |
-| "Safira é seu nome de verdade?" | "É. **Minha mãe já sabia que eu ia brilhar.**" (sorrisinho) |
+| "Safira é seu nome de verdade?" | "**Foram vocês que escolheram, esqueceram?** Pedra preciosa, né. **Combina.**" (sorrisinho, piscadinha) |
 | "Dá pra fazer só meia hora?" | "Dá. **Mas aí não dá tempo de nada.**" |
 
 **Final:** "Qual pergunta vocês queriam me fazer? Comenta que eu respondo."
