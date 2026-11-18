@@ -15,10 +15,10 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 | 02 | A senha do wi-fi (versão solo) | Safira (+ voz fora do vídeo) | Solo / duplo sentido |
 | 03 | Adivinhando com o pé (versão solo) | Lia | Solo / série de pés |
 | 04 | Quanto tempo cada signo aguenta | Safira | Solo / trend (já entregue) |
-| 05 | Posso escolher? | Kali | Solo / venda (já entregue) |
+| 05 | Posso escolher? (pergunta do WhatsApp) | Kali | Solo / venda |
 | 06 | Papo Joinville — Ep. 1: Primeira impressão | As três | **Minissérie A** |
 | 07 | Papo Joinville — Ep. 2: Quem é mais provável | As três | **Minissérie A** |
-| 08 | Uma conta da outra — Ep. 1 | Kali conta da Safira | **Minissérie B** |
+| 08 | Quem conhece mais quem? — Ep. 1 | Kali + Safira | **Minissérie B** |
 | 09 | Uma conta da outra — Ep. 2 | Safira conta da Lia, Lia conta da Kali | **Minissérie B** |
 | 10 | A piada ruim da Kali | Kali | Solo / sem graça |
 | 11 | Pressione no círculo (com reviravolta) | Kali | Solo / trend |
@@ -62,6 +62,20 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 
 ---
 
+### 05 — "Posso escolher?", versão WhatsApp (Kali) · ~20s
+*Kali sentada na maca, com o celular na mão. A pergunta aparece na tela como print de mensagem de WhatsApp. Ela lê em voz alta e responde olhando pra câmera.*
+- *Na tela (print):* "Oi, posso escolher como vai ser a minha sessão?"
+- **Kali** (lendo): "Posso escolher como vai ser a minha sessão?" *(olha pra câmera)* "Pode."
+- **Kali:** "Pode escolher a terapeuta. Pode escolher uma, duas ou quatro horas."
+- **Kali:** "Pode escolher duas mãos ou quatro mãos. Pode escolher até a música."
+- **Kali:** "Pode escolher a temperatura do gel… eu recomendo **bem quentinho**."
+- *(pausa, sorriso)* **Kali:** "**Só não pode escolher terminar cedo.**"
+- **Kali:** "Manda a sua pergunta também. Beijo."
+
+**Como funciona:** é a Kali respondendo uma mensagem que chegou no WhatsApp. Dá pra virar série depois ("Respondendo o WhatsApp"), sempre com uma pergunta real de cliente.
+
+---
+
 ## MINISSÉRIE A — "Papo Joinville" (2 episódios)
 **Formato:** as três sentadas lado a lado (sofá ou maca), um "microfone" improvisado (escova, colher de pau, frasco de gel) passando de mão em mão. Câmera parada, plano aberto. Abre sempre com as três falando juntas: **"Papo Joinville!"**
 
@@ -95,26 +109,31 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 
 ---
 
-## MINISSÉRIE B — "Uma conta da outra" (2 episódios)
-**Formato:** uma de frente pra câmera contando **3 coisas que ninguém sabe** sobre a outra, que fica do lado só reagindo (e se defendendo). Texto na tela: "3 coisas que vocês não sabem sobre a [nome]".
+## MINISSÉRIE B — "Quem conhece mais quem?" (2 episódios)
+**Formato:** duas sentadas lado a lado, cada uma com um papel (ou quadrinho) e uma caneta. Alguém fora do vídeo lê a pergunta, as duas escrevem a resposta escondida e viram ao mesmo tempo. Placar na tela.
+⚠️ As respostas abaixo são exemplo. **Na gravação, usem as respostas verdadeiras delas** — o jogo fica mais engraçado de verdade.
 
-### 08 — Ep. 1: Kali conta da Safira · ~25s
-| Fala |
-|---|
-| **Kali:** "Três coisas que vocês não sabem sobre a Safira." |
-| "**Um:** ela demorou uma semana pra escolher o próprio nome. **E ainda pediu ajuda pra vocês.**" **Safira:** "E vocês escolheram certo!" |
-| "**Dois:** ela tira **quarenta fotos** pra postar **uma**." **Safira:** "A luz tem que estar boa, gente!" |
-| "**Três:** ela tem a mão quente. **Sempre.** Até no inverno de Joinville." |
-| **Safira** (olhando pra câmera, séria): "**Isso é verdade. Pode perguntar pros clientes.**" |
-| **Kali:** "Na parte 2…" **Safira:** "**…eu me vingo.**" |
+### 08 — Ep. 1: Kali x Safira · ~30s
+- **Voz:** "Quem conhece mais quem? Kali contra Safira."
+- **Voz:** "Comida favorita da Safira?"
+- *Viram os papéis.* Kali escreveu "**salada**". Safira escreveu "**pastel**".
+- **Kali:** "Mas você só posta salada!"
+- **Safira:** "**Postar é diferente de comer.**"
+- **Voz:** "Maior medo da Kali?"
+- *Viram.* As duas escreveram "**barata**". **Kali** (chocada): "Como você sabe?" **Safira:** "Você gritou semana passada."
+- **Voz:** "O que a Safira mais escuta dos clientes?"
+- *Viram.* Kali escreveu "**você é linda**". Safira escreveu "**já acabou?**"
+- **Safira** (olhando pra câmera): "**E eu respondo: ainda nem começou.**"
+- *Na tela: placar "Safira 2 x 0 Kali".*
+- **Kali:** "Eu quero revanche."
+- **Safira:** "**Parte 2. Com a Lia.**"
 
-**Legenda:** "Agora vocês já sabem 🌱🔥"
-**Duplo sentido:** leve, só na "mão quente / pergunta pros clientes" (e ainda vende).
+**O duplo sentido:** só no "já acabou? / ainda nem começou" (e vende a duração da sessão). O resto é sem graça e mostra a intimidade das duas.
 
 ### 09 — Ep. 2: Safira conta da Lia, Lia conta da Kali · ~30s
 | Fala |
 |---|
-| **Safira:** "Prometi vingança. Mas primeiro, a Lia." |
+| **Safira:** "Na parte 1 a Kali não sabia nada de mim. Agora eu conto da Lia." |
 | "A Lia coloca **alarme pra beber água**… e **desliga o alarme**." **Lia:** "Ele me julga." |
 | "E ela **chora em propaganda de margarina**." **Lia:** "A família toma café junta, gente!" |
 | **Lia** (pega a vez): "Agora a Kali." |
@@ -233,27 +252,17 @@ Não tem roteiro fixo. A ideia é **deixar a câmera rodando o dia todo** e mont
 
 ## Calendário (7 por semana, as três aparecendo igual)
 
-**Regra de ouro:** toda semana tem **1 solo de cada** · se tiver dupla, tem **uma de cada par** (Kali+Safira, Safira+Lia, Kali+Lia) · vídeo com as três conta pra todas.
+**Formato da semana:** **domingo, segunda e terça = solos** (uma de cada) · **quarta a sábado = elas juntas** (3 duplas, uma de cada par, + 1 com as três; ou 4 com as três).
 
-| | Seg | Ter | Qua | Qui | Sex | Sáb | Dom |
+| | Dom | Seg | Ter | Qua | Qui | Sex | Sáb |
 |---|---|---|---|---|---|---|---|
-| **Semana 1** | 13 Lia (conheça) | 01 Safira+Lia (balão) | 11 Kali (círculo) | 15 Kali+Lia (guarda-chuva) | 04 Safira (signo) | **08 Conta Ep.1** (Kali+Safira) | **16 Backstage** (as três) |
-| **Semana 2** | **06 Papo Ep.1** | **09 Conta Ep.2** | **07 Papo Ep.2** | 10 Kali (piada ruim) | 12 Safira (ouço) | 14 Lia (trava-língua) | **17 Backstage** |
-| **Semana 3** | 05 Kali (posso escolher) | | 02 Safira (wi-fi) | | 03 Lia (pé) | | |
+| **Semana 1** | 13 Lia (conheça) | 11 Kali (círculo) | 04 Safira (signo) | 01 Safira+Lia (balão) | 15 Kali+Lia (guarda-chuva) | **08 Quem conhece Ep.1** (Kali+Safira) | **16 Backstage** |
+| **Semana 2** | 14 Lia (trava-língua) | 10 Kali (piada ruim) | 12 Safira (ouço) | **09 Ep.2** (as três) | **06 Papo Ep.1** | **07 Papo Ep.2** | **17 Backstage** |
+| **Semana 3** | 03 Lia (pé) | 05 Kali (WhatsApp) | 02 Safira (wi-fi) | *próxima gravação* | *próxima gravação* | *próxima gravação* | *próxima gravação* |
 
-**Quantas vezes cada uma aparece:**
-| | Semana 1 | Semana 2 | Semana 3 (parcial) |
-|---|---|---|---|
-| Kali | 4 (11, 15, 08, 16) | 5 (06, 09, 07, 10, 17) | 1 (05) |
-| Safira | 4 (01, 04, 08, 16) | 5 (06, 09, 07, 12, 17) | 1 (02) |
-| Lia | 4 (13, 01, 15, 16) | 5 (06, 09, 07, 14, 17) | 1 (03) |
+**Quantas vezes cada uma aparece:** semana 1 = 4 cada · semana 2 = 5 cada · semana 3 = 1 cada (até entrar a próxima gravação).
 
-- A **Lia abre a semana 1** com a apresentação dela.
-- O **Ep.1 do "Uma conta da outra"** fecha a semana 1 e o **Ep.2** sai na terça seguinte. O **Papo Joinville** sai segunda e quarta da semana 2.
-- A **semana 3** fica com 3 vídeos (1 de cada) — os outros 4 entram da próxima gravação.
-
-**Modelo pras próximas gravações (7 vídeos = 4 aparições pra cada):**
-3 solos (1 de cada) + 3 duplas (Kali+Safira, Safira+Lia, Kali+Lia) + 1 com as três (série ou backstage).
+**Modelo pras próximas gravações (7 vídeos):** 3 solos (1 de cada) + 3 duplas (Kali+Safira, Safira+Lia, Kali+Lia) + 1 com as três = **4 aparições pra cada**.
 
 ## Ordem sugerida pra gravar na terça
 1. Solos de apresentação (13, 11) — elas ainda "frescas".
