@@ -232,6 +232,43 @@ Regras de sempre: nunca falar "massagem" (é "sessão"/"atendimento"), zero pala
 
 ---
 
+## GAVETA — 4 vídeos de reserva (sem data, servem a qualquer momento)
+
+### G1 — "Lendo comentários" (Kali, solo) · ~20s
+*Kali sentada com o celular. O comentário aparece na tela como print. Ela lê em voz alta e responde pra câmera.*
+- **Kali** (lendo): "'Kali, você é brava?'" *(faz uma careta)* "Eu? **Só se o cliente chegar atrasado.**"
+- **Kali** (lendo): "'Quanto tempo dura a sessão?'" "Uma, duas, três ou quatro horas. **Depende de quanto você aguenta.**"
+- **Kali** (lendo): "'Kali, canta uma música?'" *(respira fundo, abre a boca… corte seco)*
+- **Kali:** "Comenta aí que eu respondo no próximo."
+⚠️ Usar comentários reais do perfil quando tiver. Os de cima são exemplo.
+
+### G2 — "Pressione no círculo" (Safira, solo) · ~10s
+*Igual ao formato da matriz: sem fala, música, círculo desenhado na tela.*
+- *Texto:* "Pressione no círculo para a Safira vir te atender mais rápido…!"
+- *A Safira vem andando devagar do fundo do corredor, olhando pra câmera, ajeitando o cabelo.*
+- *Para bem perto da câmera e dá uma piscadinha.*
+
+### G3 — "Isso ou aquilo, parte 2" (Lia, solo) · ~15s
+*Mesmo formato do "isso ou aquilo" que a Lia já fez. Voz fora do vídeo pergunta, ela responde rápido.*
+- **Voz:** "Café ou chá?" **Lia:** "Café."
+- **Voz:** "Frio ou calor?" **Lia:** "Calor."
+- **Voz:** "Rápido ou devagar?" **Lia:** "**Devagar.**"
+- **Voz:** "Uma hora ou duas?" **Lia:** "**Duas.**"
+- **Voz:** "Com gel ou sem gel?" **Lia** (sorrisinho): "**Com. Sempre.**"
+- **Lia:** "E você? Comenta as suas."
+**O duplo sentido:** só nas três últimas — sempre com a cara inocente dela.
+
+### G4 — "Telefone sem fio" (as três) · ~20s
+*As três em fila. A Kali fala uma frase no ouvido da Safira, a Safira passa pra Lia, a Lia fala em voz alta.*
+- **Kali** (pra câmera): "A frase é: **o gel tá quentinho e cheiroso.**" *(cochicha pra Safira)*
+- *A Safira cochicha pra Lia, segurando o riso.*
+- **Lia** (séria, em voz alta): "**O Joel tá quentinho e cheiroso.**"
+- **Kali e Safira:** "**QUEM É JOEL?!**" *(as três riem)*
+- *Na tela no final:* "Ninguém conhece o Joel 😂"
+**A piada:** sem graça e boba, do jeito que você pediu. Se sair outra frase errada na hora, melhor ainda — usa a que sair.
+
+---
+
 ## BACKSTAGE — 16 e 17 (erros de gravação)
 Não tem roteiro fixo. A ideia é **deixar a câmera rodando o dia todo** e montar dois vídeos de 20–30s com o melhor. O que a gente quer captar: **elas se divertindo juntas**, não elas parecendo bobas.
 
@@ -250,17 +287,19 @@ Não tem roteiro fixo. A ideia é **deixar a câmera rodando o dia todo** e mont
 
 ---
 
-## Calendário (7 por semana, as três aparecendo igual)
+## Calendário (15 roteiros postados + 4 de gaveta)
 
-**Formato da semana:** **domingo, segunda e terça = solos** (uma de cada) · **quarta a sábado = elas juntas** (3 duplas, uma de cada par, + 1 com as três; ou 4 com as três).
+**Formato da semana:** **domingo, segunda e terça = solos** (uma de cada) · **quarta a sábado = elas juntas.**
+Os erros de gravação (16 e 17) não contam nos 15 — entram como extra na semana 2.
 
 | | Dom | Seg | Ter | Qua | Qui | Sex | Sáb |
 |---|---|---|---|---|---|---|---|
-| **Semana 1** | 13 Lia (conheça) | 11 Kali (círculo) | 04 Safira (signo) | 01 Safira+Lia (balão) | 15 Kali+Lia (guarda-chuva) | **08 Quem conhece Ep.1** (Kali+Safira) | **16 Backstage** |
-| **Semana 2** | 14 Lia (trava-língua) | 10 Kali (piada ruim) | 12 Safira (ouço) | **09 Ep.2** (as três) | **06 Papo Ep.1** | **07 Papo Ep.2** | **17 Backstage** |
+| **Semana 1** | 13 Lia (conheça) | 11 Kali (círculo) | 04 Safira (signo) | 01 Safira+Lia (balão) | 15 Kali+Lia (guarda-chuva) | **08 Quem conhece Ep.1** (Kali+Safira) | **06 Papo Ep.1** (as três) |
+| **Semana 2** | 14 Lia (trava-língua) | 10 Kali (piada ruim) | 12 Safira (ouço) | **09 Ep.2** (as três) | **07 Papo Ep.2** (as três) | 16 Erros de gravação (extra) | 17 Erros de gravação (extra) |
 | **Semana 3** | 03 Lia (pé) | 05 Kali (WhatsApp) | 02 Safira (wi-fi) | *próxima gravação* | *próxima gravação* | *próxima gravação* | *próxima gravação* |
 
 **Quantas vezes cada uma aparece:** semana 1 = 4 cada · semana 2 = 5 cada · semana 3 = 1 cada (até entrar a próxima gravação).
+**Gaveta (G1–G4):** reserva pra quando faltar vídeo ou algum não ficar bom. Não têm data — e como são 1 solo de cada + 1 com as três, usar a gaveta inteira mantém as três iguais.
 
 **Modelo pras próximas gravações (7 vídeos):** 3 solos (1 de cada) + 3 duplas (Kali+Safira, Safira+Lia, Kali+Lia) + 1 com as três = **4 aparições pra cada**.
 
