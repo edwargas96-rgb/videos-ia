@@ -65,5 +65,5 @@ Base: 13 vídeos já postados de Joinville (14 arquivos, 1 repetido). Identifica
 | 14 | Trava-língua | **Lia** | Ri fácil e de verdade — o erro fica natural. |
 | 15 | O guarda-chuva | **Kali** ensina · **Lia** fecha | Melhor dupla. A Lia, "inocente", solta "acostumada a ficar molhada". |
 
-**Conta por menina:** Kali 11 aparições (3 solos) · Safira 8 (3 solos) · Lia 9 (2 solos).
+**Conta por menina:** Kali 11 aparições (3 solos) · Safira 8 (2 solos) · Lia 8 (2 solos).
 Se quiser equilibrar a Lia: trocar o **05 (Posso escolher?)** pra ela — a fala calma dela também combina com o tom de FAQ.
